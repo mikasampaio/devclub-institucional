@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   Design tokens (Tailwind v4 theme) — cores, tipografia e raios centralizados.
+   Uso: bg-background, text-accent, border-line, text-muted etc.
+--------------------------------------------------------------------------- */
+@theme {
+  /* Cores base do tema dark */
+  --color-background: #050308;
+  --color-surface: #0d0a12;
+  --color-surface-2: #14101c;
+  --color-line: rgba(255, 255, 255, 0.08);
+  --color-line-strong: rgba(255, 255, 255, 0.14);
+
+  /* Cor de destaque (roxo/violeta) */
+  --color-accent: #7c3aed;
+  --color-accent-soft: #a78bfa;
+  --color-accent-deep: #4c1d95;
+
+  /* Texto */
+  --color-foreground: #f5f3f7;
+  --color-muted: #9b95a6;
+  --color-faded: #55505f;
+
+  /* Tipografia */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+
+  /* Raio padrão dos cards */
+  --radius-card: 1.25rem;
+
+  /* Animação do marquee de tags/logos */
+  --animate-marquee: marquee 30s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Glow radial roxo reutilizado em várias seções (hero, testimonial, CTA) */
+.glow-radial {
+  background: radial-gradient(
+    ellipse 60% 55% at 50% 0%,
+    rgba(124, 58, 237, 0.35) 0%,
+    rgba(59, 39, 141, 0.18) 45%,
+    transparent 75%
+  );
+}
+
+/* Foco visível para navegação por teclado */
+:focus-visible {
+  outline: 2px solid var(--color-accent-soft);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: rgba(124, 58, 237, 0.45);
+}
