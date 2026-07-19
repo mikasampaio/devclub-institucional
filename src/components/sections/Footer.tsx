@@ -1,0 +1,123 @@
+import Link from "next/link";
+
+const TEMPLATE_PAGES = [
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Portfolio", href: "#portfolio" },
+  { label: "Contact", href: "#contact" },
+  { label: "FAQ", href: "#faq" },
+];
+
+const SOCIAL_LINKS = [
+  { label: "Twitter / X", href: "#" },
+  { label: "Instagram", href: "#" },
+  { label: "Youtube", href: "#" },
+  { label: "Framer", href: "#" },
+];
+
+/** Footer: logo + tagline, colunas de links, newsletter e linha legal. */
+export default function Footer() {
+  return (
+    <footer className="border-t border-line bg-surface/50">
+      <div className="mx-auto max-w-6xl px-5 py-16">
+        <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr_1fr_1.5fr]">
+          {/* Logo + tagline */}
+          <div>
+            <Link href="#home" className="flex items-center gap-2 text-lg font-bold">
+              <span
+                aria-hidden="true"
+                className="flex h-7 w-7 items-center justify-center rounded-lg bg-accent text-sm text-white"
+              >
+                N
+              </span>
+              Nubien
+            </Link>
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted">
+              Made remotely with 💜 and passion
+              <br />– Westhill Studio.
+            </p>
+          </div>
+
+          {/* Páginas */}
+          <nav aria-label="Páginas do template">
+            <h3 className="text-sm font-semibold">Template Pages</h3>
+            <ul className="mt-4 flex flex-col gap-2.5">
+              {TEMPLATE_PAGES.map((page) => (
+                <li key={page.label}>
+                  <Link
+                    href={page.href}
+                    className="text-sm text-muted transition-colors hover:text-foreground"
+                  >
+                    {page.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* Social */}
+          <nav aria-label="Redes sociais">
+            <h3 className="text-sm font-semibold">Social</h3>
+            <ul className="mt-4 flex flex-col gap-2.5">
+              {SOCIAL_LINKS.map((social) => (
+                <li key={social.label}>
+                  <a
+                    href={social.href}
+                    className="text-sm text-muted transition-colors hover:text-foreground"
+                  >
+                    {social.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* Newsletter */}
+          <div>
+            <h3 className="text-sm font-semibold">Subscribe Us</h3>
+            <p className="mt-4 text-sm text-muted">
+              Get AI insights and updates straight to your inbox.
+            </p>
+            <form
+              className="mt-4 flex gap-2"
+              /* Integre com seu provedor de e-mail (ex: Resend, Mailchimp) */
+              action="#"
+            >
+              <label htmlFor="newsletter-email" className="sr-only">
+                Seu e-mail
+              </label>
+              <input
+                id="newsletter-email"
+                type="email"
+                required
+                placeholder="name@email.com"
+                className="w-full rounded-xl border border-line bg-white/[0.04] px-4 py-2.5 text-sm text-foreground placeholder:text-faded focus:border-accent focus:outline-none"
+              />
+              <button
+                type="submit"
+                className="shrink-0 rounded-xl bg-accent px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-accent-soft"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+
+        {/* Linha legal */}
+        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-line pt-8 sm:flex-row">
+          <p className="text-xs text-faded">
+            © {new Date().getFullYear()} Nubien. All rights reserved.
+          </p>
+          <div className="flex gap-6">
+            <a href="#" className="text-xs text-faded transition-colors hover:text-foreground">
+              Terms &amp; Conditions
+            </a>
+            <a href="#" className="text-xs text-faded transition-colors hover:text-foreground">
+              Privacy Policy
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
