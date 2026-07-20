@@ -1,0 +1,71 @@
+/* Dock (React Bits) tematizado com os tokens do projeto (definidos no @theme
+   de globals.css). Magnificação por transform (scale) em slots de tamanho fixo:
+   o layout não muda no hover, então nada "treme" nem é empurrado. */
+
+.dock-outer {
+  position: relative;
+  display: flex;
+  width: 100%;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.dock-panel {
+  display: flex;
+  align-items: flex-end;
+  width: fit-content;
+  gap: 1.25rem;
+}
+
+/* Slot: reserva o espaço do item em tamanho FIXO (o tile escala por cima). */
+.dock-slot {
+  position: relative;
+  display: flex;
+  flex: none;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.dock-item {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  /* border: 1px solid var(--color-line-strong); */
+  background-color: var(--color-surface-2);
+  color: var(--color-white);
+  cursor: pointer;
+  outline: none;
+  will-change: transform;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+/* Item em hover/foco fica acima dos vizinhos ao crescer */
+.dock-item:hover,
+.dock-item:focus-visible {
+  z-index: 10;
+}
+
+.dock-label {
+  position: absolute;
+  bottom: calc(100% + 0.5rem);
+  left: 50%;
+  z-index: 20;
+  width: fit-content;
+  white-space: pre;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-line-strong);
+  background-color: var(--color-surface-2);
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-foreground);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+}
