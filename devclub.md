@@ -18,11 +18,11 @@ ou
 
 O foco da comunicação é sempre:
 
-* aprender do zero
-* formação prática
-* empregabilidade
-* comunidade
-* acompanhamento
+- aprender do zero
+- formação prática
+- empregabilidade
+- comunidade
+- acompanhamento
 
 ---
 
@@ -48,11 +48,11 @@ Ser a principal referência em formação tecnológica no Brasil. ([DevClub][2])
 
 ## Valores
 
-* Excelência
-* Inovação
-* Comunidade
-* Transparência
-* Compromisso com o aluno ([DevClub][2])
+- Excelência
+- Inovação
+- Comunidade
+- Transparência
+- Compromisso com o aluno ([DevClub][2])
 
 ---
 
@@ -62,75 +62,77 @@ Os materiais públicos apresentam alguns números diferentes entre páginas (pro
 
 ## Página comercial
 
-* +25 mil alunos
-* 250+ empresas
-* alunos em mais de 30 países
-* avaliação 4.9/5 
+- +25 mil alunos
+- 250+ empresas
+- alunos em mais de 30 países
+- avaliação 4.9/5
+
 ---
 
 # Empresas que contratam alunos
 
 Na home atual aparecem logos como:
 
-* Microsoft
-* IBM
-* Oracle
-* Accenture
-* Santander
-* Itaú
-* Bradesco
-* BTG Pactual
-* Nubank
-* XP
-* Stone
-* Mercado Livre
-* iFood
-* TOTVS
-* Unimed
-* Vivo
-* Avanade
-* Capgemini
-* Wipro
-* GFT
-* Stefanini
-* Compass UOL
-* Algar
-* Ebanx
-* PagBank
-* Renner
-* Raia Drogasil
-* Burger King
-* CVC
-* Einstein
-* Growth
-* Omie
-* Omella
-* Afya
-* CCR
-* Valeo
-* PUC
-* Senac
-* Unicesumar ([DevClub][3])
+- Microsoft
+- IBM
+- Oracle
+- Accenture
+- Santander
+- Itaú
+- Bradesco
+- BTG Pactual
+- Nubank
+- XP
+- Stone
+- Mercado Livre
+- iFood
+- TOTVS
+- Unimed
+- Vivo
+- Avanade
+- Capgemini
+- Wipro
+- GFT
+- Stefanini
+- Compass UOL
+- Algar
+- Ebanx
+- PagBank
+- Renner
+- Raia Drogasil
+- Burger King
+- CVC
+- Einstein
+- Growth
+- Omie
+- Omella
+- Afya
+- CCR
+- Valeo
+- PUC
+- Senac
+- Unicesumar ([DevClub][3])
 
 ---
 
 # Formações
-* Front-end
-* Back-end
-* Full Stack
-* Mobile
-* React
-* Node
-* JavaScript
-* HTML
-* CSS
-* Gestor de IA
-* IA e Automações
-* Claude
-* Claude Code
-* N8N
-* Power BI
-* Análise de Dados
+
+- Front-end
+- Back-end
+- Full Stack
+- Mobile
+- React
+- Node
+- JavaScript
+- HTML
+- CSS
+- Gestor de IA
+- IA e Automações
+- Claude
+- Claude Code
+- N8N
+- Power BI
+- Análise de Dados
 
 ---
 
@@ -138,23 +140,23 @@ Na home atual aparecem logos como:
 
 ## Ensino
 
-* metodologia prática
-* centenas de projetos
-* desafios reais
-* trilhas organizadas
-* conteúdo atualizado
-* aprendizado do zero ao profissional ([DevClub][1])
+- metodologia prática
+- centenas de projetos
+- desafios reais
+- trilhas organizadas
+- conteúdo atualizado
+- aprendizado do zero ao profissional ([DevClub][1])
 
 ---
 
 ## Suporte
 
-* suporte humano
-* comunidade ativa
-* mentorias ao vivo
-* acompanhamento
-* preparação para entrevistas
-* empregabilidade ([DevClub][1])
+- suporte humano
+- comunidade ativa
+- mentorias ao vivo
+- acompanhamento
+- preparação para entrevistas
+- empregabilidade ([DevClub][1])
 
 ---
 
@@ -162,12 +164,12 @@ Na home atual aparecem logos como:
 
 Segundo o mentor, destacar:
 
-* Plataforma de ensino
-* Trilhas organizadas
-* Comunidade
-* Club Agents
-* Playground
-* Mural da Fama
+- Plataforma de ensino
+- Trilhas organizadas
+- Comunidade
+- Club Agents
+- Playground
+- Mural da Fama
 
 ---
 
@@ -175,13 +177,13 @@ Segundo o mentor, destacar:
 
 Segundo as orientações do mentor:
 
-* recrutadora semanal
-* terapeuta de alta performance
-* mentorias
-* IA disponível 24h
-* suporte humano
-* comunidade
-* vagas exclusivas
+- recrutadora semanal
+- terapeuta de alta performance
+- mentorias
+- IA disponível 24h
+- suporte humano
+- comunidade
+- vagas exclusivas
 
 Esses itens combinam com a proposta de acompanhamento apresentada pelo site oficial. ([DevClub][1])
 
@@ -191,9 +193,9 @@ Esses itens combinam com a proposta de acompanhamento apresentada pelo site ofic
 
 Outro diferencial citado:
 
-* projetos reais
-* projetos para portfólio
-* desafios práticos
+- projetos reais
+- projetos para portfólio
+- desafios práticos
 
 O material comercial também reforça a construção de portfólio. ([DevClub][1])
 
@@ -205,9 +207,9 @@ O mentor pediu uma dobra específica.
 
 O site destaca:
 
-* Pós-graduação reconhecida pelo MEC
-* MBA em Inteligência Artificial
-* certificações internacionais ([DevClub][1])
+- Pós-graduação reconhecida pelo MEC
+- MBA em Inteligência Artificial
+- certificações internacionais ([DevClub][1])
 
 ---
 
@@ -215,13 +217,13 @@ O site destaca:
 
 O mentor listou:
 
-* Rodolfo Mori
-* Fernanda
-* Agustinho
-* Henrique
-* Márcio
-* Juliana
-* Mateus
+- Rodolfo Mori
+- Fernanda
+- Agustinho
+- Henrique
+- Márcio
+- Juliana
+- Mateus
 
 ---
 
@@ -231,12 +233,12 @@ O mentor listou:
 
 História resumida encontrada na página Sobre:
 
-* começou como eletricista do metrô
-* estudou programação de forma autodidata
-* conseguiu sua primeira vaga em aproximadamente seis meses
-* trabalhou em grandes empresas
-* tornou-se sócio de empresa de software
-* fundou o DevClub para ensinar outras pessoas a entrarem no mercado de tecnologia. ([DevClub][2])
+- começou como eletricista do metrô
+- estudou programação de forma autodidata
+- conseguiu sua primeira vaga em aproximadamente seis meses
+- trabalhou em grandes empresas
+- tornou-se sócio de empresa de software
+- fundou o DevClub para ensinar outras pessoas a entrarem no mercado de tecnologia. ([DevClub][2])
 
 ---
 
@@ -244,11 +246,11 @@ História resumida encontrada na página Sobre:
 
 A comunicação atual utiliza chamadas como:
 
-* Ver Formações
-* Quero ser aluno
-* Comece agora sua jornada
-* Escolher minha formação
-* Falar com consultor ([DevClub][1])
+- Ver Formações
+- Quero ser aluno
+- Comece agora sua jornada
+- Escolher minha formação
+- Falar com consultor ([DevClub][1])
 
 ---
 
@@ -258,18 +260,18 @@ Com base no material do mentor e nas informações oficiais, a estrutura pode fi
 
 1. Header
 
-   * Logo
-   * Formações
-   * Faculdade
-   * Área do Aluno
-   * Quero ser Aluno
+   - Logo
+   - Formações
+   - Faculdade
+   - Área do Aluno
+   - Quero ser Aluno
 
 2. Hero
 
-   * Headline forte
-   * +25 mil alunos
-   * CTA
-   * Logos das empresas
+   - Headline forte
+   - +25 mil alunos
+   - CTA
+   - Logos das empresas
 
 3. Formações
 
