@@ -3,11 +3,12 @@
 import { useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
+import { ChevronsRight, User, UserRound } from "lucide-react";
 import Button from "@/components/ui/Button";
 import Image from "next/image";
 
 const NAV_LINKS = [
-  { label: "Home", href: "#home" },
+  { label: "Página Inicial", href: "#home" },
   { label: "Formações", href: "#about" },
   { label: "Faculdade", href: "#portfolio" },
   { label: "Contato", href: "#contact" },
@@ -45,15 +46,19 @@ export default function Header() {
             <Link
               key={link.label}
               href={link.href}
-              className="text-sm text-muted transition-colors hover:text-foreground"
+              className="text-sm font-normal text-muted transition-colors hover:text-foreground"
             >
               {link.label}
             </Link>
           ))}
         </nav>
 
-        <div className="hidden md:block">
-          <Button className="px-5 py-2.5">Get In Touch</Button>
+        <div className="hidden items-center gap-3 md:flex">
+          <Button variant="outline" icon={<UserRound size={16} />}>
+            Área do aluno
+          </Button>
+
+          <Button icon={<ChevronsRight size={16} />}>Quero ser aluno</Button>
         </div>
 
         {/* Botão hambúrguer (mobile) */}
@@ -94,7 +99,14 @@ export default function Header() {
                   {link.label}
                 </Link>
               ))}
-              <Button className="mt-2 w-full">Get In Touch</Button>
+
+              <Button variant="outline" icon={<UserRound size={16} />}>
+                Área do aluno
+              </Button>
+
+              <Button icon={<ChevronsRight size={16} />}>
+                Quero ser aluno
+              </Button>
             </div>
           </motion.nav>
         )}

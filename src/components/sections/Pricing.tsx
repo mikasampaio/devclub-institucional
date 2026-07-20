@@ -101,7 +101,10 @@ export default function Pricing() {
 
               <ul className="mt-6 flex flex-col gap-3 border-t border-line pt-6">
                 {plan.benefits.map((benefit) => (
-                  <li key={benefit} className="flex items-start gap-2.5 text-sm text-muted">
+                  <li
+                    key={benefit}
+                    className="flex items-start gap-2.5 text-sm text-muted"
+                  >
                     <CheckIcon />
                     {benefit}
                   </li>

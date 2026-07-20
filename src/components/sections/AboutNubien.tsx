@@ -57,7 +57,9 @@ export default function AboutNubien() {
                   className="h-64 w-full rounded-card border border-line bg-gradient-to-br from-accent/25 via-surface-2 to-accent-deep/35 lg:h-72 lg:w-1/2"
                 />
                 <div className="w-full lg:w-1/2">
-                  <h3 className="text-2xl font-semibold sm:text-3xl">{block.title}</h3>
+                  <h3 className="text-2xl font-semibold sm:text-3xl">
+                    {block.title}
+                  </h3>
                   <p className="mt-4 text-base leading-relaxed text-muted">
                     {block.description}
                   </p>

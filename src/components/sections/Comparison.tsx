@@ -40,7 +40,10 @@ export default function Comparison() {
             <h3 className="text-lg font-semibold text-muted">Other Agencies</h3>
             <ul className="mt-6 flex flex-col gap-4">
               {OTHERS.map((item) => (
-                <li key={item} className="flex items-center gap-3 text-sm text-muted">
+                <li
+                  key={item}
+                  className="flex items-center gap-3 text-sm text-muted"
+                >
                   <CrossIcon />
                   {item}
                 </li>
@@ -55,7 +58,10 @@ export default function Comparison() {
             <h3 className="text-lg font-semibold">Nubien</h3>
             <ul className="mt-6 flex flex-col gap-4">
               {NUBIEN.map((item) => (
-                <li key={item} className="flex items-center gap-3 text-sm text-foreground">
+                <li
+                  key={item}
+                  className="flex items-center gap-3 text-sm text-foreground"
+                >
                   <CheckIcon />
                   {item}
                 </li>
@@ -74,7 +80,15 @@ function CrossIcon() {
       aria-hidden="true"
       className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-red-500/15 text-red-400"
     >
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+      <svg
+        width="12"
+        height="12"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      >
         <path d="M18 6L6 18M6 6l12 12" />
       </svg>
     </span>
@@ -87,7 +101,16 @@ function CheckIcon() {
       aria-hidden="true"
       className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent/20 text-accent-soft"
     >
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        width="12"
+        height="12"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <path d="M20 6L9 17l-5-5" />
       </svg>
     </span>

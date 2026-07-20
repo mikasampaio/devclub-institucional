@@ -23,7 +23,10 @@ export default function Footer() {
         <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr_1fr_1.5fr]">
           {/* Logo + tagline */}
           <div>
-            <Link href="#home" className="flex items-center gap-2 text-lg font-bold">
+            <Link
+              href="#home"
+              className="flex items-center gap-2 text-lg font-bold"
+            >
               <span
                 aria-hidden="true"
                 className="flex h-7 w-7 items-center justify-center rounded-lg bg-accent text-sm text-white"
@@ -109,10 +112,16 @@ export default function Footer() {
             © {new Date().getFullYear()} Nubien. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-xs text-faded transition-colors hover:text-foreground">
+            <a
+              href="#"
+              className="text-xs text-faded transition-colors hover:text-foreground"
+            >
               Terms &amp; Conditions
             </a>
-            <a href="#" className="text-xs text-faded transition-colors hover:text-foreground">
+            <a
+              href="#"
+              className="text-xs text-faded transition-colors hover:text-foreground"
+            >
               Privacy Policy
             </a>
           </div>

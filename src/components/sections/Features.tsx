@@ -5,31 +5,38 @@ import Card from "@/components/ui/Card";
 const FEATURES = [
   {
     title: "Seamless API Integrations",
-    description: "Connect your favorite tools and platforms without friction or extra code.",
+    description:
+      "Connect your favorite tools and platforms without friction or extra code.",
   },
   {
     title: "Trusted Authentication",
-    description: "Enterprise-grade security keeping your data and users protected at all times.",
+    description:
+      "Enterprise-grade security keeping your data and users protected at all times.",
   },
   {
     title: "AI-Speech Recognition",
-    description: "Turn voice into insight with accurate, real-time speech processing.",
+    description:
+      "Turn voice into insight with accurate, real-time speech processing.",
   },
   {
     title: "Real-Time Data",
-    description: "Live dashboards and instant updates so you never work with stale numbers.",
+    description:
+      "Live dashboards and instant updates so you never work with stale numbers.",
   },
   {
     title: "Vision Capabilities",
-    description: "Computer vision that reads, detects and understands images at scale.",
+    description:
+      "Computer vision that reads, detects and understands images at scale.",
   },
   {
     title: "Optimized UX/UI",
-    description: "Interfaces designed for clarity, speed and delightful interaction.",
+    description:
+      "Interfaces designed for clarity, speed and delightful interaction.",
   },
   {
     title: "Predictive Analytics",
-    description: "Anticipate trends and make smarter decisions with AI-driven forecasts.",
+    description:
+      "Anticipate trends and make smarter decisions with AI-driven forecasts.",
   },
 ];
 

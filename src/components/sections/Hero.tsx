@@ -5,12 +5,22 @@ import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
 
 /* Logos de clientes/parceiros — troque pelos SVGs reais das marcas */
-const CLIENT_LOGOS = ["Lumina", "Vertex", "Nexora", "Orbita", "Quantix", "Helio"];
+const CLIENT_LOGOS = [
+  "Lumina",
+  "Vertex",
+  "Nexora",
+  "Orbita",
+  "Quantix",
+  "Helio",
+];
 
 /** Hero: badge, título grande com contraste, subtítulo, CTAs e faixa de logos. */
 export default function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden pt-36 pb-20 sm:pt-44">
+    <section
+      id="home"
+      className="relative overflow-hidden pt-36 pb-20 sm:pt-44"
+    >
       {/* Glow radial roxo de fundo */}
       <div aria-hidden="true" className="glow-radial absolute inset-0" />
 

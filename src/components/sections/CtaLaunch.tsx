@@ -5,7 +5,10 @@ import Button from "@/components/ui/Button";
 export default function CtaLaunch() {
   return (
     <section className="relative overflow-hidden px-5 py-24 sm:py-32">
-      <div aria-hidden="true" className="glow-radial absolute inset-0 rotate-180" />
+      <div
+        aria-hidden="true"
+        className="glow-radial absolute inset-0 rotate-180"
+      />
 
       <Reveal className="relative mx-auto flex max-w-3xl flex-col items-center text-center">
         <h2 className="text-3xl font-bold leading-tight tracking-tight sm:text-5xl">
@@ -14,8 +17,8 @@ export default function CtaLaunch() {
           <span className="text-faded">in a Minutes of Time!</span>
         </h2>
         <p className="mt-5 max-w-xl text-base leading-relaxed text-muted">
-          Skip months of development. Our team gets your AI-powered presence live
-          faster than you thought possible.
+          Skip months of development. Our team gets your AI-powered presence
+          live faster than you thought possible.
         </p>
         <div className="mt-8">
           <Button>Book an Appointment</Button>
@@ -33,7 +36,8 @@ export default function CtaLaunch() {
             ))}
           </div>
           <p className="text-sm text-muted">
-            <span className="font-semibold text-foreground">200+</span> Agencies Rated
+            <span className="font-semibold text-foreground">200+</span> Agencies
+            Rated
           </p>
         </div>
       </Reveal>

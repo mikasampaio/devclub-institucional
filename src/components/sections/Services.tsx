@@ -7,32 +7,38 @@ const SERVICES = [
   {
     category: "Development",
     title: "AI-Powered Development",
-    description: "Custom software built with intelligence at its core, from MVP to enterprise.",
+    description:
+      "Custom software built with intelligence at its core, from MVP to enterprise.",
   },
   {
     category: "Conversational",
     title: "AI Chatbots",
-    description: "24/7 assistants that understand context and speak your brand's language.",
+    description:
+      "24/7 assistants that understand context and speak your brand's language.",
   },
   {
     category: "Data",
     title: "Predictive Analytics",
-    description: "Forecast demand, churn and revenue with models trained on your data.",
+    description:
+      "Forecast demand, churn and revenue with models trained on your data.",
   },
   {
     category: "Vision",
     title: "Computer Vision Solutions",
-    description: "Detection, classification and OCR pipelines ready for production.",
+    description:
+      "Detection, classification and OCR pipelines ready for production.",
   },
   {
     category: "Audio",
     title: "Speech Recognition",
-    description: "Transcription and voice interfaces with best-in-class accuracy.",
+    description:
+      "Transcription and voice interfaces with best-in-class accuracy.",
   },
   {
     category: "Automation",
     title: "AI-Driven Automation",
-    description: "Automate repetitive workflows and free your team for what matters.",
+    description:
+      "Automate repetitive workflows and free your team for what matters.",
   },
 ];
 

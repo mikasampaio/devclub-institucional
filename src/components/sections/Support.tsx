@@ -6,24 +6,23 @@ import Button from "@/components/ui/Button";
 const SUPPORT_ITEMS = [
   {
     title: "Fast Responses",
-    description: "Get answers within minutes, not days — our team is always online.",
-    icon: (
-      <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" />
-    ),
+    description:
+      "Get answers within minutes, not days — our team is always online.",
+    icon: <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" />,
   },
   {
     title: "Expert Guidance",
-    description: "Talk directly with AI specialists who know your project inside out.",
+    description:
+      "Talk directly with AI specialists who know your project inside out.",
     icon: (
       <path d="M12 2a7 7 0 00-7 7c0 2.4 1.2 4.5 3 5.7V17a2 2 0 002 2h4a2 2 0 002-2v-2.3c1.8-1.2 3-3.3 3-5.7a7 7 0 00-7-7zM9 21h6" />
     ),
   },
   {
     title: "Continuous Help",
-    description: "Ongoing support and monitoring long after your product ships.",
-    icon: (
-      <path d="M12 22a10 10 0 110-20 10 10 0 010 20zm0-14v4l3 3" />
-    ),
+    description:
+      "Ongoing support and monitoring long after your product ships.",
+    icon: <path d="M12 22a10 10 0 110-20 10 10 0 010 20zm0-14v4l3 3" />,
   },
 ];
 

@@ -4,7 +4,10 @@ import Button from "@/components/ui/Button";
 /** CTA final: chamada para virar parte do time/cliente. */
 export default function CtaFinal() {
   return (
-    <section id="contact" className="relative overflow-hidden px-5 py-24 sm:py-32">
+    <section
+      id="contact"
+      className="relative overflow-hidden px-5 py-24 sm:py-32"
+    >
       {/* Glow radial roxo de fundo */}
       <div aria-hidden="true" className="glow-radial absolute inset-0" />
 

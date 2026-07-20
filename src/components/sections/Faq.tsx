@@ -38,27 +38,31 @@ const FAQS = [
 /** FAQ: lista de perguntas em accordion acessível. */
 export default function Faq() {
   return (
-    <section id="faq" className="mx-auto max-w-3xl px-5 py-24 sm:py-32">
-      <SectionHeading
-        badge="FAQ"
-        title={
-          <>
-            Frequently <TitleContrast>Asked Questions</TitleContrast>
-          </>
-        }
-        description="Everything you need to know before starting your AI journey with us."
-      />
+    <section id="faq" className="mx-auto max-w-6xl px-5 py-24 sm:py-32">
+      <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-start lg:gap-16">
+        <SectionHeading
+          align="left"
+          className="lg:sticky lg:top-32"
+          badge="FAQ"
+          title={
+            <>
+              Perguntas <TitleContrast>Frequentes</TitleContrast>
+            </>
+          }
+          description="Everything you need to know before starting your AI journey with us."
+        />
 
-      <Reveal delay={0.15} className="mt-12 flex flex-col gap-4">
-        {FAQS.map((faq, i) => (
-          <AccordionItem
-            key={faq.question}
-            question={faq.question}
-            answer={faq.answer}
-            defaultOpen={i === 0}
-          />
-        ))}
-      </Reveal>
+        <Reveal delay={0.15} className="flex flex-col gap-4">
+          {FAQS.map((faq, i) => (
+            <AccordionItem
+              key={faq.question}
+              question={faq.question}
+              answer={faq.answer}
+              defaultOpen={i === 0}
+            />
+          ))}
+        </Reveal>
+      </div>
     </section>
   );
 }
