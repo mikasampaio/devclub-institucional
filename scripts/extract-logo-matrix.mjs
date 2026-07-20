@@ -25,7 +25,7 @@ while (pos < buf.length) {
     const interlace = data[12];
     if (bitDepth !== 8 || colorType !== 6 || interlace !== 0) {
       throw new Error(
-        `formato não suportado: depth=${bitDepth} color=${colorType} interlace=${interlace} (exporte como RGBA 8-bit sem interlace)`
+        `formato não suportado: depth=${bitDepth} color=${colorType} interlace=${interlace} (exporte como RGBA 8-bit sem interlace)`,
       );
     }
   } else if (type === "IDAT") {
@@ -127,7 +127,8 @@ for (const r of grid) {
 }
 let trimmed = grid.slice(top, bottom + 1).map((r) => r.slice(left, right + 1));
 
-const transpose = (m) => m[0].split("").map((_, c) => m.map((r) => r[c]).join(""));
+const transpose = (m) =>
+  m[0].split("").map((_, c) => m.map((r) => r[c]).join(""));
 const collapse = (view) => {
   for (let k = Math.min(8, view.length); k >= 2; k--) {
     if (view.length % k !== 0) continue;
@@ -139,6 +140,8 @@ const collapse = (view) => {
 trimmed = collapse(trimmed);
 trimmed = transpose(collapse(transpose(trimmed)));
 
-console.log(`grade detectada: ${n}×${n} (${(best.mixed * 100).toFixed(1)}% ambíguo)`);
+console.log(
+  `grade detectada: ${n}×${n} (${(best.mixed * 100).toFixed(1)}% ambíguo)`,
+);
 console.log(`matriz final ${trimmed.length}×${trimmed[0].length}:\n`);
 console.log(trimmed.map((r) => `  "${r}",`).join("\n"));
