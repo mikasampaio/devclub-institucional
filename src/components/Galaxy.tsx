@@ -108,7 +108,7 @@ function usePrefersReducedMotion(): boolean {
   return useSyncExternalStore(
     subscribeReducedMotion,
     getReducedMotionSnapshot,
-    () => false
+    () => false,
   );
 }
 
@@ -129,7 +129,9 @@ function gaussian(random: () => number, mean: number, stdDev: number): number {
   let v = 0;
   while (u === 0) u = random();
   while (v === 0) v = random();
-  return mean + stdDev * Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+  return (
+    mean + stdDev * Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v)
+  );
 }
 
 // ---------------------------------------------------------------------------
@@ -366,7 +368,7 @@ function SpiralDisc({ pointsRef, materialRef }: SpiralDiscProps) {
       uSize: { value: 0.05 },
       uScale: { value: 450 },
     }),
-    []
+    [],
   );
 
   return (
@@ -412,7 +414,7 @@ function LogoParticles({
       uSize: { value: 0.05 },
       uScale: { value: 450 },
     }),
-    []
+    [],
   );
   const [hovered, setHovered] = useState(false);
   useCursor(hovered);
@@ -429,7 +431,10 @@ function LogoParticles({
             attach="attributes-color"
             args={[buffers.colors, 3]}
           />
-          <bufferAttribute attach="attributes-aSize" args={[buffers.sizes, 1]} />
+          <bufferAttribute
+            attach="attributes-aSize"
+            args={[buffers.sizes, 1]}
+          />
           <bufferAttribute
             attach="attributes-aPhase"
             args={[buffers.phases, 1]}
@@ -504,7 +509,7 @@ function GalaxyScene({ reducedMotion }: { reducedMotion: boolean }) {
       motionRef.current.dragVelocity = THREE.MathUtils.clamp(
         motionRef.current.dragVelocity + deltaX * 0.0006,
         -0.15,
-        0.15
+        0.15,
       );
     };
     const onPointerUp = () => {
@@ -539,7 +544,7 @@ function GalaxyScene({ reducedMotion }: { reducedMotion: boolean }) {
       "hoverBoost",
       motion.hovered && !reducedMotion ? 1 : 0,
       0.2,
-      delta
+      delta,
     );
 
     const logoMaterial = logoMaterialRef.current;
@@ -581,7 +586,7 @@ function GalaxyScene({ reducedMotion }: { reducedMotion: boolean }) {
         6.8,
       ],
       0.6,
-      delta
+      delta,
     );
     state.camera.lookAt(0, 0, 0);
   });

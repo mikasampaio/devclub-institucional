@@ -17,14 +17,22 @@
   --color-accent-soft: #a78bfa;
   --color-accent-deep: #4c1d95;
 
+  /* Papel semântico "primary": a cor de marca e seu contraste de leitura.
+     São aliases dos valores acima — componentes reutilizáveis (ex.:
+     GuaranteeSection) falam em `primary`/`primary-contrast` e uma nova landing
+     só precisa reapontar estas duas variáveis para trocar o esquema. */
+  --color-primary: var(--color-accent);
+  --color-primary-contrast: var(--color-foreground);
+
   /* Texto */
   --color-foreground: #f5f3f7;
   --color-muted: #9b95a6;
-  --color-faded: #55505f;
+  --color-faded: #fff9;
 
   /* Tipografia */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-signature: var(--font-caveat), "Segoe Script", cursive;
 
   /* Raio padrão dos cards */
   --radius-card: 1.25rem;
@@ -57,6 +65,43 @@ body {
     rgba(59, 39, 141, 0.18) 45%,
     transparent 75%
   );
+}
+
+/* ---------------------------------------------------------------------------
+   Specular border: brilho especular na borda que segue o cursor por proximidade.
+   Aproximação leve (em CSS) do efeito do SpecularButton (React Bits), sem WebGL
+   — para não rodar um contexto por card. O JS atualiza --specular-angle (direção
+   do cursor a partir do centro) e --specular-on (0→1 conforme a proximidade). Um
+   gradiente cônico girado nesse ângulo acende dois lóbulos simétricos na borda;
+   a máscara (xor) recorta o gradiente só no anel de 1.5px.
+--------------------------------------------------------------------------- */
+.specular-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: conic-gradient(
+    from var(--specular-angle, 0deg),
+    rgba(255, 255, 255, 0.95) 0deg,
+    rgba(255, 255, 255, 0) 40deg,
+    rgba(255, 255, 255, 0) 140deg,
+    rgba(255, 255, 255, 0.95) 180deg,
+    rgba(255, 255, 255, 0) 220deg,
+    rgba(255, 255, 255, 0) 320deg,
+    rgba(255, 255, 255, 0.95) 360deg
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: var(--specular-on, 0);
+  transition: opacity 0.2s ease;
+  pointer-events: none;
 }
 
 /* Foco visível para navegação por teclado */
