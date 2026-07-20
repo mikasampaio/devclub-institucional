@@ -1,54 +1,24 @@
 import Reveal from "@/components/ui/Reveal";
 import SectionHeading, { TitleContrast } from "@/components/ui/SectionHeading";
-import Button from "@/components/ui/Button";
+import TeamCarousel from "@/components/team/TeamCarousel";
 
-const MEMBERS = [
-  { name: "Ava Richards", role: "CEO & Founder" },
-  { name: "Liam Costa", role: "Head of AI Engineering" },
-  { name: "Maya Oliveira", role: "Lead Product Designer" },
-  { name: "Noah Ferreira", role: "ML Research Lead" },
-  { name: "Sofia Almeida", role: "Growth Strategist" },
-  { name: "Ethan Souza", role: "Solutions Architect" },
-];
-
-/** Our Team: grid de membros com foto, nome e cargo. */
+/** Professores: carrossel de mentores com card que revela a bio no "+". */
 export default function Team() {
   return (
-    <section className="mx-auto max-w-6xl px-5 py-24 sm:py-32">
+    <section className="mx-auto">
       <SectionHeading
-        badge="Our Team"
+        badge="Professores"
         title={
           <>
-            Meet the Team Making
-            <br />
-            <TitleContrast>Things Happen Every Day</TitleContrast>
+            Aprenda com os <TitleContrast>Melhores</TitleContrast>
           </>
         }
-        description="A multidisciplinary crew of engineers, designers and strategists obsessed with results."
+        description="Mentores que já viveram o mercado e vão te guiar do primeiro código à primeira vaga."
       />
 
-      <Reveal delay={0.15} className="mt-8 flex justify-center">
-        <Button variant="secondary">View About Reboot</Button>
+      <Reveal delay={0.15} className="mt-14">
+        <TeamCarousel />
       </Reveal>
-
-      <div className="mt-14 grid grid-cols-2 gap-5 md:grid-cols-3">
-        {MEMBERS.map((member, i) => (
-          <Reveal key={member.name} delay={i * 0.06}>
-            <div className="group overflow-hidden rounded-card border border-line bg-surface transition-all duration-300 hover:border-line-strong hover:-translate-y-1">
-              {/* Placeholder da foto — troque pela foto real do membro (alt = nome) */}
-              <div
-                role="img"
-                aria-label={`Foto de ${member.name}`}
-                className="aspect-square bg-gradient-to-br from-accent/30 via-surface-2 to-accent-deep/40 transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="p-5">
-                <h3 className="text-sm font-semibold sm:text-base">{member.name}</h3>
-                <p className="mt-1 text-xs text-muted sm:text-sm">{member.role}</p>
-              </div>
-            </div>
-          </Reveal>
-        ))}
-      </div>
     </section>
   );
 }
