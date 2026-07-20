@@ -25,11 +25,13 @@ export default function SectionHeading({
   return (
     <Reveal className={`flex flex-col gap-5 ${alignment} ${className}`}>
       <Badge>{badge}</Badge>
-      <h2 className="max-w-3xl text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
+      <h2 className="max-w-5xl text-3xl font-medium leading-tight tracking-tight sm:text-4xl lg:text-5xl">
         {title}
       </h2>
       {description && (
-        <p className="max-w-xl text-base leading-relaxed text-muted">{description}</p>
+        <p className="max-w-xl text-base leading-relaxed text-muted">
+          {description}
+        </p>
       )}
     </Reveal>
   );

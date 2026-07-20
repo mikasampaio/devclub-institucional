@@ -11,7 +11,11 @@ type RevealProps = {
 };
 
 /** Scroll reveal padrão: fade-in + slide-up ao entrar na viewport. */
-export default function Reveal({ children, delay = 0, className }: RevealProps) {
+export default function Reveal({
+  children,
+  delay = 0,
+  className,
+}: RevealProps) {
   const reduceMotion = useReducedMotion();
 
   return (

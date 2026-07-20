@@ -10,7 +10,11 @@ type AccordionItemProps = {
 };
 
 /** Item de accordion acessível (aria-expanded + navegação por teclado). */
-export function AccordionItem({ question, answer, defaultOpen = false }: AccordionItemProps) {
+export function AccordionItem({
+  question,
+  answer,
+  defaultOpen = false,
+}: AccordionItemProps) {
   const [open, setOpen] = useState(defaultOpen);
   const panelId = useId();
 
@@ -44,7 +48,9 @@ export function AccordionItem({ question, answer, defaultOpen = false }: Accordi
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
           >
-            <p className="px-6 pb-5 text-sm leading-relaxed text-muted">{answer}</p>
+            <p className="px-6 pb-5 text-sm leading-relaxed text-muted">
+              {answer}
+            </p>
           </motion.div>
         )}
       </AnimatePresence>
