@@ -4,9 +4,9 @@ import SalaryComparisonCard, {
 
 /** Dados de referência — Desenvolver Full-Stack, valores anuais. */
 const DEVELOPER: SalaryLevel[] = [
-  { level: "Júnior", brasil: 70_800, internacional: 135_928.66 },
-  { level: "Pleno", brasil: 140_400, internacional: 201_375.8 },
-  { level: "Sênior", brasil: 196_800, internacional: 307_098.09 },
+  { level: "Júnior", brasil: 89_050, internacional: 69_069 },
+  { level: "Pleno", brasil: 161_200, internacional: 112_306 },
+  { level: "Sênior", brasil: 211_250, internacional: 137_777 },
 ];
 
 /**
