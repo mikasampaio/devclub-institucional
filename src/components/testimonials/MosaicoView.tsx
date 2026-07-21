@@ -13,7 +13,12 @@ export default function MosaicoView() {
           delay={(i % 3) * 0.06}
           className="mb-5 break-inside-avoid"
         >
-          <div className="flex flex-col gap-5 rounded-card border border-line bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-line-strong hover:bg-surface-2">
+          <div className="relative flex flex-col gap-5 rounded-card border border-line bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-line-strong hover:bg-surface-2">
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute left-1/2 top-0 h-px w-[62%] -translate-x-1/2 bg-[linear-gradient(to_right,rgba(79,26,214,0),#4F1AD6,rgba(0,85,255,0))]"
+            />
+
             {t.featured && <VideoThumbCompact />}
             <blockquote className="text-sm leading-relaxed text-muted">
               &ldquo;{t.quote}&rdquo;

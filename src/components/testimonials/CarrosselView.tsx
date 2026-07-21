@@ -16,7 +16,10 @@ import NavArrow from "./NavArrow";
  * sem setState em effect — respeitando o lint. Ver [[lint-react-compiler-rules]].
  */
 export default function CarrosselView() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ align: "start", loop: false });
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    align: "start",
+    loop: false,
+  });
 
   const { selectedIndex, scrollSnaps, canPrev, canNext } =
     useEmblaState(emblaApi);
@@ -42,7 +45,12 @@ export default function CarrosselView() {
                   key={t.name}
                   className="min-w-0 shrink-0 grow-0 basis-[88%] sm:basis-160 lg:basis-220"
                 >
-                  <div className="flex h-full flex-col gap-6 overflow-hidden rounded-card border border-line bg-surface p-6 transition-colors duration-300 hover:border-line-strong sm:p-8 lg:flex-row lg:items-center">
+                  <div className="relative flex h-full flex-col gap-6 overflow-hidden rounded-card border border-line bg-surface p-6 transition-colors duration-300 hover:border-line-strong sm:p-8 lg:flex-row lg:items-center">
+                    <span
+                      aria-hidden="true"
+                      className="pointer-events-none absolute left-1/2 top-0 h-px w-[62%] -translate-x-1/2 bg-[linear-gradient(to_right,rgba(79,26,214,0),#4F1AD6,rgba(0,85,255,0))]"
+                    />
+
                     {/* Texto do depoimento */}
                     <div className="flex flex-1 flex-col">
                       <blockquote className="text-lg leading-relaxed text-foreground sm:text-xl">
