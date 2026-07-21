@@ -4,16 +4,10 @@ import { useRef, type MouseEvent, type ReactNode } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import {
-  MonitorPlay,
-  Route,
-  Users,
-  Bot,
-  Gamepad2,
-  Trophy,
-} from "lucide-react";
+import { MonitorPlay, Route, Users, Bot, Gamepad2, Trophy } from "lucide-react";
 import SectionHeading, { TitleContrast } from "@/components/ui/SectionHeading";
 import Button from "@/components/ui/Button";
+import { DotPattern } from "@/components/ui/dot-pattern";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -30,10 +24,6 @@ type Recurso = {
   icon: ReactNode;
 };
 
-/**
- * Os recursos da plataforma do DevClub.
- * Para adicionar um recurso, basta incluí-lo neste array.
- */
 const RECURSOS: Recurso[] = [
   {
     title: "Plataforma de Ensino",
@@ -79,16 +69,28 @@ const RECURSOS: Recurso[] = [
   },
 ];
 
-/**
- * Plataforma: efeito "scroll stack" — os cards prendem no topo e vão
- * empilhando enquanto o próximo sobe por cima, encolhendo os de baixo. Cada card
- * ainda tem o "border glow" que segue o cursor (classe .border-glow).
- *
- * Implementado nativamente com o GSAP do projeto (ScrollTrigger + position:
- * sticky), sem depender de smooth-scroll global (Lenis) — assim não conflita
- * com o pin de Formacoes nem sequestra o scroll da página. Em telas pequenas ou
- * com prefers-reduced-motion o `motion-safe:sticky` cai para uma lista estática.
- */
+/** Gira --specular-angle na direção do cursor e liga --specular-on (ver .specular-card em globals.css). */
+function handleSpecularMove(event: MouseEvent<HTMLElement>) {
+  const card = event.currentTarget;
+  const rect = card.getBoundingClientRect();
+  const angle =
+    Math.atan2(
+      event.clientY - (rect.top + rect.height / 2),
+      event.clientX - (rect.left + rect.width / 2),
+    ) *
+      (180 / Math.PI) +
+    90;
+  card.style.setProperty("--specular-angle", `${angle}deg`);
+}
+
+function handleSpecularEnter(event: MouseEvent<HTMLElement>) {
+  event.currentTarget.style.setProperty("--specular-on", "1");
+}
+
+function handleSpecularLeave(event: MouseEvent<HTMLElement>) {
+  event.currentTarget.style.setProperty("--specular-on", "0");
+}
+
 export default function Plataforma() {
   const rootRef = useRef<HTMLElement>(null);
 
@@ -141,8 +143,8 @@ export default function Plataforma() {
         badge="Plataforma"
         title={
           <>
-            Você terá acesso a uma plataforma moderna de aulas, nossa comunidade,
-            área de vagas e IA&apos;s para acelerar seu progresso
+            Você terá acesso a uma plataforma moderna de aulas, comunidade, área
+            de vagas e IA&apos;s para acelerar seu progresso
             <br />
             <TitleContrast>e tudo com suporte dos professores</TitleContrast>
           </>
@@ -155,33 +157,42 @@ export default function Plataforma() {
         {RECURSOS.map((item, i) => (
           <article
             key={item.title}
-            className="scroll-stack-card border-glow relative origin-top overflow-hidden rounded-card border border-line bg-surface shadow-[0_24px_60px_-20px_rgba(0,0,0,0.75)] motion-safe:sticky"
+            className="scroll-stack-card specular-card relative origin-top overflow-hidden rounded-card border border-line bg-surface shadow-[0_24px_60px_-20px_rgba(0,0,0,0.75)] motion-safe:sticky"
             style={{ top: `${STACK_TOP + i * STACK_GAP}px` }}
+            onMouseMove={handleSpecularMove}
+            onMouseEnter={handleSpecularEnter}
+            onMouseLeave={handleSpecularLeave}
           >
-            <div className="grid grid-cols-1 gap-7 p-8 sm:p-10 md:grid-cols-[auto_1fr] md:items-center md:gap-10 md:p-12">
+            <DotPattern
+              className="text-white/15 w-full mask-[radial-gradient(560px_circle_at_20%_30%,white,transparent)]"
+              width={14}
+              height={14}
+            />
+
+            <div className="relative z-10 grid grid-cols-1 gap-7 p-8 sm:p-10 md:grid-cols-[auto_1fr] md:items-center md:gap-10 md:p-12">
               {/* Visual — ícone do recurso sobre gradiente de destaque */}
               <div
                 aria-hidden="true"
-                className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl border border-line bg-gradient-to-br from-accent/25 via-surface-2 to-accent-deep/35 text-accent-soft shadow-lg"
+                className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl border border-line bg-gradient-to-br from-secondary/25 via-surface-2 to-secondary-deep/35 text-secondary-soft shadow-lg"
               >
                 {item.icon}
               </div>
 
               <div>
-                <span className="text-sm font-medium tabular-nums text-accent-soft">
+                <span className="text-sm font-medium tabular-nums text-secondary-soft">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="mt-2 text-2xl font-semibold sm:text-3xl">
                   {item.title}
                 </h3>
-                <p className="mt-3 max-w-2xl text-base leading-relaxed text-muted">
+                <p className="mt-3 max-w-2xl text-base leading-relaxed text-white/80">
                   {item.description}
                 </p>
                 <div className="mt-5 flex flex-wrap gap-2.5">
                   {item.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full border border-line bg-white/[0.04] px-4 py-1.5 text-sm text-muted"
+                      className="rounded-full font-medium border border-secondary/60 bg-secondary-soft/20 px-4 py-1.5 text-sm text-secondary"
                     >
                       {tag}
                     </span>

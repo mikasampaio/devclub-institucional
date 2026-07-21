@@ -1,6 +1,8 @@
+import Image from "next/image";
 import Reveal from "@/components/ui/Reveal";
 import SectionHeading, { TitleContrast } from "@/components/ui/SectionHeading";
 import { AccordionItem } from "@/components/ui/Accordion";
+import BottomFade from "@/components/ui/BottomFade";
 
 const FAQS = [
   {
@@ -33,8 +35,21 @@ const FAQS = [
 /** FAQ: lista de perguntas em accordion acessível. */
 export default function Faq() {
   return (
-    <section id="faq" className="mx-auto max-w-6xl px-5 py-24 sm:py-32">
-      <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-start lg:gap-16">
+    <section
+      id="faq"
+      className="relative mx-auto max-w-[80%] overflow-hidden px-12 my-24 py-24 rounded-2xl border border-line border-b-0 sm:py-32"
+    >
+      {/* Raios de luz — mesma imagem estática usada em Team */}
+      <Image
+        src="/light_rays.avif"
+        alt=""
+        fill
+        className="pointer-events-none object-cover object-top mix-blend-screen"
+      />
+
+      <BottomFade />
+
+      <div className="relative z-10 grid grid-cols-1 gap-12 lg:grid-cols-2 lg:justify-start lg:gap-16">
         <SectionHeading
           align="left"
           className="lg:sticky lg:top-32"

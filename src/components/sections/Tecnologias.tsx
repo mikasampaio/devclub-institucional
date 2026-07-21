@@ -1,11 +1,13 @@
 "use client";
 
 import { useRef, type ReactNode } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Sparkles } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 import SectionHeading, { TitleContrast } from "@/components/ui/SectionHeading";
+import BottomFade from "@/components/ui/BottomFade";
 import {
   SiHtml5,
   SiCss,
@@ -170,23 +172,38 @@ export default function Tecnologias() {
   );
 
   return (
-    <section ref={rootRef} className="mx-auto max-w-6xl px-5 py-12 sm:py-32">
-      <SectionHeading
-        badge="Tecnologias"
-        title={
-          <>
-            Aprenda as principais tecnologias do mercado
-            <br />
-            <TitleContrast>do ZERO e de forma didática</TitleContrast>
-          </>
-        }
-        description="Dominamos as ferramentas mais pedidas do Front ao Back, passando por Dados, IA e Automação — com quem é referência no mercado."
+    <section
+      ref={rootRef}
+      className="relative mx-auto max-w-6xl overflow-hidden px-5 py-12 sm:py-32"
+    >
+      {/* Raios de luz — mesma imagem estática usada em Team */}
+      <Image
+        src="/light_rays.avif"
+        alt=""
+        fill
+        className="pointer-events-none object-cover object-top mix-blend-screen"
       />
 
-      <Reveal delay={0.15} className="mt-14 flex flex-col gap-3">
-        <Row items={ROW_1} trackRef={(el) => void (tracksRef.current[0] = el)} />
-        <Row items={ROW_2} trackRef={(el) => void (tracksRef.current[1] = el)} />
-      </Reveal>
+      <BottomFade />
+
+      <div className="relative z-10">
+        <SectionHeading
+          badge="Tecnologias"
+          title={
+            <>
+              Aprenda as principais tecnologias do mercado
+              <br />
+              <TitleContrast>do ZERO e de forma didática</TitleContrast>
+            </>
+          }
+          description="Dominamos as ferramentas mais pedidas do Front ao Back, passando por Dados, IA e Automação — com quem é referência no mercado."
+        />
+
+        <Reveal delay={0.15} className="mt-14 flex flex-col gap-3">
+          <Row items={ROW_1} trackRef={(el) => void (tracksRef.current[0] = el)} />
+          <Row items={ROW_2} trackRef={(el) => void (tracksRef.current[1] = el)} />
+        </Reveal>
+      </div>
     </section>
   );
 }
