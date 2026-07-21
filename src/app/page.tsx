@@ -1,13 +1,13 @@
+"use client";
 import Header from "@/components/sections/Header";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Formacoes from "@/components/sections/Formacoes";
 import Tecnologias from "@/components/sections/Tecnologias";
 import Plataforma from "@/components/sections/Plataforma";
-import Pricing from "@/components/sections/Pricing";
 import Team from "@/components/sections/Team";
+import Bonus from "@/components/sections/Bonus";
 import Certificados from "@/components/sections/Certificados";
-import Comparison from "@/components/sections/Comparison";
 import SalaryComparison from "@/components/sections/SalaryComparison";
 import Testimonials from "@/components/sections/Testimonials";
 import Faq from "@/components/sections/Faq";
@@ -17,13 +17,13 @@ import GalaxyLoader from "@/components/GalaxyLoader";
 import GuaranteeSection from "@/components/sections/GuaranteeSection";
 import Diferencials from "@/components/sections/Diferencials";
 import Projects from "@/components/sections/Projects";
+import { ParallaxProvider } from "react-scroll-parallax";
 /** Home: monta todas as seções na ordem do layout de referência. */
 export default function Home() {
   return (
-    <>
+    <ParallaxProvider>
       <Header />
       <main>
-        {/* <GalaxyLoader/> */}
         <Hero />
         <Formacoes />
         <Tecnologias />
@@ -32,7 +32,7 @@ export default function Home() {
         <Projects />
         <Testimonials />
         <Team />
-
+        <Bonus />
         <Certificados />
         <SalaryComparison />
         <GuaranteeSection
@@ -41,10 +41,9 @@ export default function Home() {
           days={7}
         />
         <Faq />
-
         <CtaFinal />
       </main>
       <Footer />
-    </>
+    </ParallaxProvider>
   );
 }
