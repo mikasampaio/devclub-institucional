@@ -3,17 +3,33 @@
 import { motion } from "framer-motion";
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
+import Image from "next/image";
 
-/* Logos de clientes/parceiros — troque pelos SVGs reais das marcas */
-const CLIENT_LOGOS = [
-  "Lumina",
-  "Vertex",
-  "Nexora",
-  "Orbita",
-  "Quantix",
-  "Helio",
+const companies = [
+  { name: "Microsoft", logo: "/microsoft.png" },
+  { name: "IBM", logo: "/ibm.png" },
+  { name: "Bradesco", logo: "/bradesco.png" },
+  { name: "BTG Pactual", logo: "/btg_.png" },
+  { name: "Nubank", logo: "/nubank-logo-0-1.png" },
+  { name: "Stone", logo: "/stone.png" },
+  { name: "TOTVS", logo: "/totvs-logo.png" },
+  { name: "Vivo", logo: "/vivo.png" },
+  { name: "XP", logo: "/xp.png" },
+
+  // Ainda sem imagem
+  // { name: "Oracle" },
+  // { name: "Accenture" },
+  // { name: "Itaú" },
+  // { name: "Unimed" },
+  // { name: "Avanade" },
+  // { name: "Wipro" },
+  // { name: "GFT" },
+  // { name: "Stefanini" },
+  // { name: "Algar" },
+  // { name: "Ebanx" },
+  // { name: "PagBank" },
+  // { name: "Raia Drogasil" },
 ];
-
 /** Hero: badge, título grande com contraste, subtítulo, CTAs e faixa de logos. */
 export default function Hero() {
   return (
@@ -75,16 +91,27 @@ export default function Hero() {
             aria-hidden="true"
             className="absolute -top-16 left-1/2 h-40 w-[120%] -translate-x-1/2 rounded-[100%] bg-accent/25 blur-3xl"
           />
-          <div className="relative overflow-hidden border-y border-line py-8 [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
-            <div className="flex w-max animate-marquee gap-16">
-              {/* Duplicado para o loop infinito do marquee */}
-              {[...CLIENT_LOGOS, ...CLIENT_LOGOS].map((logo, i) => (
-                <span
-                  key={`${logo}-${i}`}
-                  className="text-lg font-semibold tracking-widest text-faded uppercase"
+          <div className="relative overflow-hidden border-t border-line py-8 [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
+            <div className="flex w-max animate-marquee items-center gap-20">
+              {[...companies, ...companies].map((company, index) => (
+                <div
+                  key={`${company.name}-${index}`}
+                  className="flex h-10 items-center justify-center shrink-0"
                 >
-                  {logo}
-                </span>
+                  {company.logo ? (
+                    <Image
+                      src={company.logo}
+                      alt={company.name}
+                      width={160}
+                      height={50}
+                      className="h-10 w-auto object-contain opacity-70 transition duration-300 hover:opacity-100 brightness-0 invert"
+                    />
+                  ) : (
+                    <span className="text-faded text-lg font-semibold uppercase tracking-widest">
+                      {company.name}
+                    </span>
+                  )}
+                </div>
               ))}
             </div>
           </div>
