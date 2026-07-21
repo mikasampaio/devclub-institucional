@@ -3,7 +3,10 @@
 import { motion } from "framer-motion";
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
+import PurpleGlow from "@/components/ui/PurpleGlow";
+import BottomFade from "@/components/ui/BottomFade";
 import Image from "next/image";
+import { ChevronsRight } from "lucide-react";
 
 const companies = [
   { name: "Microsoft", logo: "/microsoft.png" },
@@ -30,6 +33,15 @@ const companies = [
   // { name: "PagBank" },
   // { name: "Raia Drogasil" },
 ];
+
+const students = [
+  "/professionals/1.jpg",
+  "/professionals/2.jpg",
+  "/professionals/3.jpg",
+  "/professionals/4.jpg",
+  "/professionals/5.jpg",
+];
+
 /** Hero: badge, título grande com contraste, subtítulo, CTAs e faixa de logos. */
 export default function Hero() {
   return (
@@ -38,15 +50,20 @@ export default function Hero() {
       className="relative overflow-hidden pt-36 pb-20 sm:pt-44"
     >
       {/* Glow radial roxo de fundo */}
-      <div aria-hidden="true" className="glow-radial absolute inset-0" />
+      <div aria-hidden="true" className="glow-radial absolute inset-0 z-0" />
 
-      <div className="relative mx-auto flex max-w-4xl flex-col items-center px-5 text-center">
+      {/* Arco de brilho roxo ancorado na base */}
+      <PurpleGlow animate />
+
+      <BottomFade />
+
+      <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center px-5 text-center">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <Badge>2025 Next-Gen AI Studio</Badge>
+          <Badge>A Escola das Profissões do Futuro</Badge>
         </motion.div>
 
         <motion.h1
@@ -55,9 +72,9 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="mt-6 text-4xl font-bold leading-[1.1] tracking-tight sm:text-6xl lg:text-7xl"
         >
-          AI-Driven Success
+          Do zero à primeira vaga
           <br />
-          <span className="text-faded">Redefining the Future.</span>
+          <span className="text-faded">em tecnologia.</span>
         </motion.h1>
 
         <motion.p
@@ -66,19 +83,58 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-6 max-w-lg text-base leading-relaxed text-muted sm:text-lg"
         >
-          Creating latest solutions that redefine innovation. Stay ahead with
-          AI-powered technology for the future.
+          Aprenda a programar com uma metodologia prática, projetos reais e
+          mentoria de quem já vive o mercado de tecnologia.
         </motion.p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-8 flex flex-col gap-3 sm:flex-row"
-        >
-          <Button>Connect With Us</Button>
-          <Button variant="secondary">What is Nubien?</Button>
-        </motion.div>
+        <div className="flex items-center gap-4">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-8 flex flex-col gap-3 sm:flex-row"
+          >
+            <Button
+              variant="secondary"
+              className="bg-white! text-black!"
+              icon={<ChevronsRight size={16} />}
+              onClick={() =>
+                document
+                  .getElementById("formacoes")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              Saiba mais
+            </Button>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mt-10 flex items-center gap-3"
+          >
+            <div className="flex -space-x-3">
+              {students.map((src) => (
+                <Image
+                  key={src}
+                  src={src}
+                  alt=""
+                  width={36}
+                  height={36}
+                  className="size-10 rounded-full border-2 border-white object-cover"
+                />
+              ))}
+            </div>
+            <p className="text-left text-sm leading-tight">
+              <span className="font-semibold text-foreground">
+                +25 mil alunos
+              </span>
+              <br />
+              <span className="text-white">já passaram por aqui</span>
+            </p>
+          </motion.div>
+        </div>
 
         {/* Faixa de logos com glow roxo */}
         <motion.div
