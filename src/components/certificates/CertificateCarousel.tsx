@@ -65,7 +65,7 @@ export default function CertificateCarousel() {
       */}
       <div className="relative md:mx-[calc(50%-50vw)]">
         <div ref={emblaRef} className="overflow-hidden">
-          <div className="flex gap-5">
+          <div className="flex gap-5 cursor-grab">
             {CERTIFICATES.map((certificate) => (
               <div
                 key={certificate.id}

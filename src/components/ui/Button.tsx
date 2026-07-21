@@ -1,3 +1,4 @@
+import { cn } from "@/lib/cn";
 import type { ButtonHTMLAttributes, ReactNode } from "react";
 
 type ButtonProps = {
@@ -32,7 +33,7 @@ export default function Button({
   ...props
 }: ButtonProps) {
   return (
-    <button className={`${base} ${variants[variant]} ${className}`} {...props}>
+    <button className={cn(base, variants[variant], className)} {...props}>
       {icon && iconPosition === "left" && icon}
       {children}
       {icon && iconPosition === "right" && icon}
