@@ -4,34 +4,29 @@ import { AccordionItem } from "@/components/ui/Accordion";
 
 const FAQS = [
   {
-    question: "What do I need to get started?",
+    question: "Qual é o tempo de acesso à plataforma",
     answer:
-      "Just a conversation. Book a call, tell us about your goals, and we'll map the best AI approach for your business — no technical background required.",
+      "Você terá acesso por 12 meses completos a todo o conteúdo da Formação DevClub, incluindo as atualizações e novos módulos que forem sendo liberados durante esse período.",
   },
   {
-    question: "What kind of AI solutions does Nubien build?",
+    question: "Preciso ter algum conhecimento prévio sobre programação",
     answer:
-      "Chatbots, predictive analytics, computer vision, speech recognition, automation pipelines and custom AI-powered products, from prototype to production.",
+      "Não! O DevClub foi criado para iniciantes. Começamos do zero absoluto e vamos avançando gradualmente, sempre com didática clara e prática.",
   },
   {
-    question: "How long does a typical project take?",
+    question: "Qual sistema de pagamento utilizado? É seguro?",
     answer:
-      "Most projects launch within 4 to 8 weeks. Complex enterprise solutions can take longer, but we always ship in incremental milestones so you see progress weekly.",
+      "Utilizamos a Hotmart, uma das maiores plataformas de produtos digitais do Brasil. É 100% seguro e você pode pagar via cartão de crédito, boleto, PIX ou PayPal.",
   },
   {
-    question: "Do I need my own data to use AI?",
+    question: "Como funciona a garantia?",
     answer:
-      "Not necessarily. We can start with pre-trained models and public datasets, then improve accuracy over time as your own data accumulates.",
+      "Você tem 7 dias de garantia incondicional. Se por qualquer motivo você não gostar do curso, basta solicitar o reembolso que devolvemos 100% do seu investimento.",
   },
   {
-    question: "Can Nubien integrate with my existing tools?",
+    question: "Como eu assisto às aulas?",
     answer:
-      "Yes. We integrate natively with CRMs, ERPs, communication platforms and any tool with an API — your workflow stays intact.",
-  },
-  {
-    question: "What happens after the project launches?",
-    answer:
-      "Every plan includes post-launch monitoring and support. We track performance, retrain models when needed, and keep everything running smoothly 24/7.",
+      "As aulas ficam disponíveis na nossa área de membros, que você pode acessar de qualquer dispositivo com internet. Assista quando e onde quiser.",
   },
 ];
 
@@ -49,7 +44,7 @@ export default function Faq() {
               Perguntas <TitleContrast>Frequentes</TitleContrast>
             </>
           }
-          description="Everything you need to know before starting your AI journey with us."
+          description="Tudo o que você precisa saber antes de começar sua jornada conosco."
         />
 
         <Reveal delay={0.15} className="flex flex-col gap-4">

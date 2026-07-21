@@ -162,7 +162,7 @@ export default function Formacoes() {
             >
               <div className="group grid h-full grid-cols-1 overflow-hidden rounded-card border border-line bg-surface transition-all duration-300 hover:border-line-strong hover:bg-surface-2 sm:grid-cols-[minmax(0,42%)_1fr]">
                 {/* Visual — ícone da área sobre gradiente */}
-                <div className="relative flex min-h-[160px] items-center justify-center bg-gradient-to-br from-accent/20 via-surface-2 to-accent-deep/30 p-8 sm:min-h-[240px]">
+                <div className="relative flex min-h-[160px] items-center justify-center bg-gradient-to-br from-accent/20 via-surface-2 to-accent-deep/30 p-8 sm:min-h-[300px]">
                   <span
                     aria-hidden="true"
                     className="flex h-20 w-20 items-center justify-center rounded-2xl border border-line bg-surface/70 text-accent-soft shadow-lg backdrop-blur-sm transition-transform duration-300 group-hover:scale-105"

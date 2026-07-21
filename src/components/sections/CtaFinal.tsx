@@ -13,16 +13,16 @@ export default function CtaFinal() {
 
       <Reveal className="relative mx-auto flex max-w-3xl flex-col items-center text-center">
         <h2 className="text-3xl font-bold leading-tight tracking-tight sm:text-5xl">
-          Ready to Elevate Your Brand
+          Pronto para transformar
           <br />
-          <span className="text-faded">with Next-Gen Innovation?</span>
+          <span className="text-faded">sua carreira em tecnologia?</span>
         </h2>
         <p className="mt-5 max-w-xl text-base leading-relaxed text-muted">
-          Become a part of us — join hundreds of businesses already building the
-          future with Nubien&apos;s AI expertise.
+          Junte-se a mais de 25 mil alunos que já mudaram de vida com o DevClub.
+          Comece hoje sua jornada do zero ao profissional.
         </p>
         <div className="mt-8">
-          <Button>Book an Appointment</Button>
+          <Button>Quero ser aluno</Button>
         </div>
       </Reveal>
     </section>

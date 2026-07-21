@@ -63,11 +63,6 @@ const ROW_1: Tech[] = [
 
 const ROW_2: Tech[] = [
   { name: "Python", icon: <SiPython />, color: "#5A9FD4" },
-  { name: "Pandas", icon: <SiPandas />, color: "#C4B5FD" },
-  { name: "NumPy", icon: <SiNumpy />, color: "#6AB7FF" },
-  { name: "Scikit-learn", icon: <SiScikitlearn />, color: "#F7931E" },
-  { name: "Plotly", icon: <SiPlotly />, color: "#8A93D6" },
-  { name: "Selenium", icon: <SiSelenium />, color: "#5CC13D" },
   { name: "Streamlit", icon: <SiStreamlit />, color: "#FF4B4B" },
   { name: "Jupyter", icon: <SiJupyter />, color: "#F37626" },
   { name: "LangChain", icon: <SiLangchain />, color: "#6EE7B7" },

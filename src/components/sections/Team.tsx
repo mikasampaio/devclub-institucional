@@ -5,7 +5,7 @@ import TeamCarousel from "@/components/team/TeamCarousel";
 /** Professores: carrossel de mentores com card que revela a bio no "+". */
 export default function Team() {
   return (
-    <section className="mx-auto">
+    <section className="mx-auto py-24">
       <SectionHeading
         badge="Professores"
         title={

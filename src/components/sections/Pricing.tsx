@@ -47,7 +47,7 @@ const PLANS = [
 ];
 
 /** Pricing: 3 planos, com o Professional destacado como "Most Pick". */
-export default function Pricing() {
+export default function ricing() {
   return (
     <section className="mx-auto max-w-6xl px-5 py-24 sm:py-32">
       <SectionHeading

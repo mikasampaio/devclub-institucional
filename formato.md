@@ -13,7 +13,7 @@ Chamada principal com o destaque de "+25 mil alunos já passaram por aqui" e uma
 [x] Reforça o discurso "Aprenda as PRINCIPAIS Tecnologias do Mercado - Do ZERO, de forma Didática com os MELHORES do Mercado".
 
 **Dobra — Diferenciais**
-Título "Tudo que você precisa ALÉM do Código para Evoluir mais rápido", listando: acompanhamento semanal de recrutadora, terapeuta focado em alta performance, mentorias semanais, agentes de IA 24h, suporte humano 7 dias por semana, comunidade de tecnologia e vagas exclusivas.
+[x] Título "Tudo que você precisa ALÉM do Código para Evoluir mais rápido", listando: acompanhamento semanal de recrutadora, terapeuta focado em alta performance, mentorias semanais, agentes de IA 24h, suporte humano 7 dias por semana, comunidade de tecnologia e vagas exclusivas.
 
 **Dobra — Plataforma**
 [x] Descreve o acesso à plataforma de aulas, comunidade, área de vagas e IAs. Itens: Plataforma de Ensino, Cursos por Trilhas/Formações, Comunidade de alunos, Club Agents, Playground de Treinamento e Mural da Fama dos alunos destaque.
