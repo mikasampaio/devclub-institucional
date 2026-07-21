@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import SectionHeading, { TitleContrast } from "@/components/ui/SectionHeading";
+import { cn } from "@/lib/cn";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -12,7 +13,9 @@ type Area = {
   title: string;
   description: string;
   trilhas: string[];
-  icon: ReactNode;
+  /** Recebe a cor de destaque da área para "furar" o ícone (cutouts na cor do fundo sólido). */
+  icon: (accent: string) => ReactNode;
+  accent: string;
 };
 
 /**
@@ -31,10 +34,15 @@ const AREAS: Area[] = [
       "HTML5",
       "CSS3",
     ],
-    icon: (
+    accent: "#8B5CF6",
+    icon: (accent) => (
       <>
-        <rect x="3" y="4" width="18" height="14" rx="2" />
-        <path d="M3 9h18M9 21h6M12 18v3" />
+        <rect x="8" y="14" width="84" height="72" rx="16" fill="#fff" />
+        <rect x="8" y="32" width="84" height="6" fill={accent} />
+        <circle cx="24" cy="23" r="4" fill={accent} />
+        <circle cx="36" cy="23" r="4" fill={accent} />
+        <circle cx="48" cy="23" r="4" fill={accent} />
+        <rect x="20" y="46" width="60" height="32" rx="8" fill={accent} />
       </>
     ),
   },
@@ -43,10 +51,12 @@ const AREAS: Area[] = [
     description:
       "A lógica por trás das aplicações — APIs, servidores e o ciclo completo do front ao back.",
     trilhas: ["Back End", "Node", "Full Stack"],
-    icon: (
+    accent: "#6366F1",
+    icon: () => (
       <>
-        <path d="M12 2 2 7l10 5 10-5-10-5z" />
-        <path d="m2 17 10 5 10-5M2 12l10 5 10-5" />
+        <rect x="15" y="14" width="70" height="18" rx="9" fill="#fff" />
+        <rect x="15" y="41" width="70" height="18" rx="9" fill="#fff" />
+        <rect x="15" y="68" width="70" height="18" rx="9" fill="#fff" />
       </>
     ),
   },
@@ -55,10 +65,12 @@ const AREAS: Area[] = [
     description:
       "Aplicativos nativos e híbridos para Android e iOS com as tecnologias mais pedidas.",
     trilhas: ["Mobile"],
-    icon: (
+    accent: "#22D3EE",
+    icon: (accent) => (
       <>
-        <rect x="6" y="2" width="12" height="20" rx="2.5" />
-        <path d="M11 18h2" />
+        <rect x="28" y="10" width="44" height="80" rx="14" fill="#fff" />
+        <rect x="44" y="18" width="12" height="4" rx="2" fill={accent} />
+        <rect x="42" y="78" width="16" height="4" rx="2" fill={accent} />
       </>
     ),
   },
@@ -67,10 +79,23 @@ const AREAS: Area[] = [
     description:
       "Domine IA na prática: da gestão estratégica ao desenvolvimento com Claude.",
     trilhas: ["Gestor de IA", "IA e Automações", "Claude & Claude Code"],
-    icon: (
+    accent: "#EC4899",
+    icon: (accent) => (
       <>
-        <rect x="7" y="7" width="10" height="10" rx="2" />
-        <path d="M9 3v2M15 3v2M9 19v2M15 19v2M3 9h2M3 15h2M19 9h2M19 15h2" />
+        <rect x="34" y="12" width="6" height="10" rx="3" fill="#fff" />
+        <rect x="47" y="12" width="6" height="10" rx="3" fill="#fff" />
+        <rect x="60" y="12" width="6" height="10" rx="3" fill="#fff" />
+        <rect x="34" y="78" width="6" height="10" rx="3" fill="#fff" />
+        <rect x="47" y="78" width="6" height="10" rx="3" fill="#fff" />
+        <rect x="60" y="78" width="6" height="10" rx="3" fill="#fff" />
+        <rect x="12" y="34" width="10" height="6" rx="3" fill="#fff" />
+        <rect x="12" y="47" width="10" height="6" rx="3" fill="#fff" />
+        <rect x="12" y="60" width="10" height="6" rx="3" fill="#fff" />
+        <rect x="78" y="34" width="10" height="6" rx="3" fill="#fff" />
+        <rect x="78" y="47" width="10" height="6" rx="3" fill="#fff" />
+        <rect x="78" y="60" width="10" height="6" rx="3" fill="#fff" />
+        <rect x="25" y="25" width="50" height="50" rx="12" fill="#fff" />
+        <circle cx="50" cy="50" r="9" fill={accent} />
       </>
     ),
   },
@@ -79,10 +104,14 @@ const AREAS: Area[] = [
     description:
       "Automatize processos e transforme dados em decisões com dashboards profissionais.",
     trilhas: ["Trilha N8N", "Análise de Dados / Power BI"],
-    icon: (
+    accent: "#10B981",
+    icon: () => (
       <>
-        <circle cx="12" cy="12" r="3.5" />
-        <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1" />
+        <rect x="10" y="64" width="18" height="18" rx="9" fill="#fff" />
+        <rect x="24" y="46" width="18" height="18" rx="9" fill="#fff" />
+        <rect x="41" y="28" width="18" height="18" rx="9" fill="#fff" />
+        <rect x="58" y="46" width="18" height="18" rx="9" fill="#fff" />
+        <rect x="72" y="64" width="18" height="18" rx="9" fill="#fff" />
       </>
     ),
   },
@@ -133,7 +162,7 @@ export default function Formacoes() {
   );
 
   return (
-    <section ref={rootRef} className="relative overflow-hidden">
+    <section id="formacoes" ref={rootRef} className="relative overflow-hidden">
       <div className="flex flex-col justify-center gap-12 py-24 sm:py-32 md:min-h-screen md:py-0">
         {/* Cabeçalho contido, alinhado às demais seções */}
         <div className="mx-auto w-full max-w-6xl px-5">
@@ -160,26 +189,19 @@ export default function Formacoes() {
               key={area.title}
               className="w-[86vw] shrink-0 snap-start sm:w-[560px] lg:w-[640px]"
             >
-              <div className="group grid h-full grid-cols-1 overflow-hidden rounded-card border border-line bg-surface transition-all duration-300 hover:border-line-strong hover:bg-surface-2 sm:grid-cols-[minmax(0,42%)_1fr]">
-                {/* Visual — ícone da área sobre gradiente */}
-                <div className="relative flex min-h-[160px] items-center justify-center bg-gradient-to-br from-accent/20 via-surface-2 to-accent-deep/30 p-8 sm:min-h-[300px]">
-                  <span
+              <div className="group grid h-full grid-cols-1 overflow-hidden rounded-card border border-line bg-surface transition-colors duration-300 hover:border-line-strong sm:grid-cols-[minmax(0,42%)_1fr]">
+                {/* Visual — ícone branco/furado sobre fundo sólido na cor de destaque da área */}
+                <div
+                  className="relative flex min-h-[160px] items-center justify-center p-8 sm:min-h-[300px]"
+                  style={{ backgroundColor: area.accent }}
+                >
+                  <svg
                     aria-hidden="true"
-                    className="flex h-20 w-20 items-center justify-center rounded-2xl border border-line bg-surface/70 text-accent-soft shadow-lg backdrop-blur-sm transition-transform duration-300 group-hover:scale-105"
+                    viewBox="0 0 100 100"
+                    className="h-24 w-24 transition-transform duration-300 group-hover:scale-105 sm:h-36 sm:w-36"
                   >
-                    <svg
-                      width="34"
-                      height="34"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.6"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      {area.icon}
-                    </svg>
-                  </span>
+                    {area.icon(area.accent)}
+                  </svg>
                 </div>
 
                 {/* Conteúdo */}
@@ -188,14 +210,19 @@ export default function Formacoes() {
                     {area.title}
                   </h2>
 
-                  <p className="text-sm leading-relaxed text-muted">
-                    {area.description}
-                  </p>
+                  <p className="text-sm leading-relaxed">{area.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {area.trilhas.map((trilha) => (
                       <span
                         key={trilha}
-                        className="rounded-full border border-line bg-white/[0.04] px-3 py-1 text-xs text-muted"
+                        className={cn(
+                          `rounded-full border px-3 py-1 text-xs font-medium`,
+                        )}
+                        style={{
+                          borderColor: area.accent,
+                          color: area.accent,
+                          backgroundColor: area.accent + 30,
+                        }}
                       >
                         {trilha}
                       </span>
