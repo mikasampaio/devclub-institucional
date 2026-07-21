@@ -139,7 +139,7 @@ function CheckIcon() {
       strokeWidth="2.5"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="mt-0.5 shrink-0 text-accent-soft"
+      className="mt-0.5 shrink-0 text-secondary"
     >
       <path d="M20 6L9 17l-5-5" />
     </svg>

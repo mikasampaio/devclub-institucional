@@ -12,7 +12,7 @@ export default function VideoThumbCompact() {
         aria-label="Assistir depoimento em vídeo"
         className="group absolute inset-0 flex items-center justify-center"
       >
-        <span className="flex size-12 items-center justify-center rounded-full bg-linear-to-b from-accent to-accent-deep text-white shadow-lg transition-transform duration-300 group-hover:scale-110">
+        <span className="flex size-12 items-center justify-center rounded-full bg-linear-to-b from-secondary to-secondary-deep text-white shadow-lg transition-transform duration-300 group-hover:scale-110">
           <Play
             aria-hidden="true"
             className="size-5 translate-x-0.5"

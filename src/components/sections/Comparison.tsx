@@ -99,7 +99,7 @@ function CheckIcon() {
   return (
     <span
       aria-hidden="true"
-      className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent/20 text-accent-soft"
+      className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-secondary/20 text-secondary"
     >
       <svg
         width="12"

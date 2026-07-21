@@ -101,7 +101,7 @@ function GuaranteeBadge({ days }: GuaranteeBadgeProps) {
       </motion.svg>
 
       {/* Miolo do selo: check + prazo, na cor primária do tema. */}
-      <div className="relative flex flex-col items-center gap-1 text-primary">
+      <div className="relative flex flex-col items-center gap-1 text-secondary">
         <Check aria-hidden="true" strokeWidth={3} className="h-9 w-9" />
         <span className="text-4xl font-bold leading-none">{days}</span>
         <span className="text-xs font-semibold uppercase tracking-[0.2em]">
@@ -128,7 +128,7 @@ export default function GuaranteeSection({
         // Full-bleed: escapa de qualquer container e ocupa 100vw, centralizado.
         // `flex items-center` centraliza o conteúdo verticalmente na altura cheia.
         "relative left-1/2 right-1/2 -mx-[50vw] flex h-screen w-screen items-center",
-        "bg-accent text-primary-contrast",
+        "bg-secondary text-primary-contrast",
         className,
       )}
     >

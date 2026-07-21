@@ -14,7 +14,7 @@ export default function VideoThumb({ featured }: { featured?: boolean }) {
         aria-label={featured ? "Assistir depoimento em vídeo" : "Ver depoimento"}
         className="group absolute inset-0 flex items-center justify-center"
       >
-        <span className="flex size-16 items-center justify-center rounded-full bg-linear-to-b from-accent to-accent-deep text-white shadow-lg transition-transform duration-300 group-hover:scale-110">
+        <span className="flex size-16 items-center justify-center rounded-full bg-linear-to-b from-secondary to-secondary-deep text-white shadow-lg transition-transform duration-300 group-hover:scale-110">
           <Play
             aria-hidden="true"
             className="size-6 translate-x-0.5"

@@ -43,8 +43,7 @@ export function calcDifference(internacional: number, brasil: number): number {
  */
 export function maxSalary(data: SalaryLevel[]): number {
   return data.reduce(
-    (max, { brasil, internacional }) =>
-      Math.max(max, brasil, internacional),
+    (max, { brasil, internacional }) => Math.max(max, brasil, internacional),
     0,
   );
 }
@@ -56,8 +55,9 @@ export function maxSalary(data: SalaryLevel[]): number {
 const SERIES = {
   brasil: {
     label: "Brasil",
-    dot: "#2ecc71",
-    gradient: "linear-gradient(90deg, #22c55e 0%, #2ecc71 100%)",
+    dot: "var(--color-secondary)",
+    gradient:
+      "linear-gradient(90deg, var(--color-secondary-deep) 0%, var(--color-secondary) 100%)",
   },
   internacional: {
     label: "Internacional",
@@ -137,7 +137,13 @@ interface SalaryRowProps {
   delay: number;
 }
 
-function SalaryRow({ row, max, currency, reduceMotion, delay }: SalaryRowProps) {
+function SalaryRow({
+  row,
+  max,
+  currency,
+  reduceMotion,
+  delay,
+}: SalaryRowProps) {
   const diff = calcDifference(row.internacional, row.brasil);
 
   return (
