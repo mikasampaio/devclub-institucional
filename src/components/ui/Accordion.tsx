@@ -31,7 +31,7 @@ export function AccordionItem({
         <motion.span
           animate={{ rotate: open ? 45 : 0 }}
           transition={{ duration: 0.2 }}
-          className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-line text-accent-soft"
+          className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-line text-secondary-soft"
           aria-hidden="true"
         >
           +

@@ -17,6 +17,12 @@
   --color-accent-soft: #a78bfa;
   --color-accent-deep: #4c1d95;
 
+  /* Cor de destaque secundária (verde) — usada para reforçar CTAs, badges
+     e outros pontos que precisem se destacar do roxo */
+  --color-secondary: #39d354;
+  --color-secondary-soft: #7ee6a0;
+  --color-secondary-deep: #1d7a37;
+
   /* Papel semântico "primary": a cor de marca e seu contraste de leitura.
      São aliases dos valores acima — componentes reutilizáveis (ex.:
      GuaranteeSection) falam em `primary`/`primary-contrast` e uma nova landing
@@ -46,6 +52,19 @@
     }
     to {
       transform: translateX(-50%);
+    }
+  }
+
+  /* Pulsação sutil do arco PurpleGlow (opcional) */
+  --animate-glow-pulse: glow-pulse 6s ease-in-out infinite;
+
+  @keyframes glow-pulse {
+    0%,
+    100% {
+      opacity: 0.85;
+    }
+    50% {
+      opacity: 1;
     }
   }
 }
@@ -83,13 +102,13 @@ body {
   padding: 1.5px;
   background: conic-gradient(
     from var(--specular-angle, 0deg),
-    rgba(255, 255, 255, 0.95) 0deg,
-    rgba(255, 255, 255, 0) 40deg,
-    rgba(255, 255, 255, 0) 140deg,
-    rgba(255, 255, 255, 0.95) 180deg,
-    rgba(255, 255, 255, 0) 220deg,
-    rgba(255, 255, 255, 0) 320deg,
-    rgba(255, 255, 255, 0.95) 360deg
+    var(--color-secondary-soft) 0deg,
+    rgba(167, 139, 250, 0) 40deg,
+    rgba(167, 139, 250, 0) 140deg,
+    var(--color-secondary-soft) 180deg,
+    rgba(167, 139, 250, 0) 220deg,
+    rgba(167, 139, 250, 0) 320deg,
+    var(--color-secondary-soft) 360deg
   );
   -webkit-mask:
     linear-gradient(#000 0 0) content-box,
