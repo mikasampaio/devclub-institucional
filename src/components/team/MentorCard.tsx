@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Plus, X } from "lucide-react";
 import type { Mentor } from "./mentors";
+import MentorAvatar from "./MentorAvatar";
 
 /**
  * Card de mentor com dois lados:
@@ -41,20 +43,17 @@ function CardFront({
 }) {
   return (
     <div className="absolute inset-0 overflow-hidden rounded-card border border-line bg-surface backface-hidden">
-      {/* Foto do mentor — placeholder em gradiente enquanto não há imagem real */}
+      {/* Foto do mentor — placeholder em avatar gerado enquanto não há imagem real */}
       {mentor.image ? (
-        // eslint-disable-next-line @next/next/no-img-element -- placeholder até termos next/image configurado
-        <img
+        <Image
           src={mentor.image}
           alt={`Foto de ${mentor.name}`}
-          className="absolute inset-0 size-full object-cover"
+          fill
+          sizes="(min-width: 1280px) 23vw, (min-width: 1024px) 30vw, (min-width: 640px) 42vw, 78vw"
+          className="object-cover"
         />
       ) : (
-        <div
-          role="img"
-          aria-label={`Foto de ${mentor.name}`}
-          className="absolute inset-0 bg-linear-to-br from-accent/30 via-surface-2 to-accent-deep/40"
-        />
+        <MentorAvatar name={mentor.name} className="absolute inset-0" />
       )}
 
       {/* Gradiente para dar leitura ao texto sobre a foto */}
@@ -76,7 +75,7 @@ function CardFront({
           type="button"
           onClick={onOpen}
           aria-label={`Ver informações de ${mentor.name}`}
-          className="flex size-10 shrink-0 cursor-pointer items-center justify-center rounded-full bg-linear-to-b from-accent to-accent-deep text-white shadow-lg transition-transform duration-300 hover:scale-110"
+          className="flex size-10 shrink-0 cursor-pointer items-center justify-center rounded-full bg-linear-to-b from-secondary to-secondary-deep text-white shadow-lg transition-transform duration-300 hover:scale-110"
         >
           <Plus aria-hidden="true" className="size-5" strokeWidth={2.5} />
         </button>
@@ -107,18 +106,22 @@ function CardBack({
       <div className="flex items-center justify-between">
         {/* Avatar do mentor */}
         {mentor.image ? (
-          // eslint-disable-next-line @next/next/no-img-element -- placeholder até termos next/image configurado
-          <img
+          <Image
             src={mentor.image}
             alt=""
+            width={56}
+            height={56}
             className="size-14 rounded-full object-cover"
           />
         ) : (
           <span
             aria-hidden="true"
-            className="flex size-14 items-center justify-center rounded-full bg-linear-to-br from-accent to-accent-deep text-base font-semibold text-white"
+            className="relative flex size-14 shrink-0 items-center justify-center overflow-hidden rounded-full text-base font-semibold text-white"
           >
-            {initials}
+            <MentorAvatar name={mentor.name} className="absolute inset-0" />
+            <span className="relative drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
+              {initials}
+            </span>
           </span>
         )}
 
@@ -136,7 +139,7 @@ function CardBack({
         <h3 className="text-lg font-semibold text-foreground">
           {mentor.name}
         </h3>
-        <p className="text-md text-accent-soft">{mentor.role}</p>
+        <p className="text-md text-secondary-soft">{mentor.role}</p>
       </div>
 
       <p className="mt-3 flex-1 overflow-y-auto text-md leading-relaxed text-foreground">

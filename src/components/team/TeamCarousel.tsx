@@ -64,7 +64,7 @@ export default function TeamCarousel() {
               aria-current={i === selectedIndex}
               className={`h-2 rounded-full transition-all duration-300 ${
                 i === selectedIndex
-                  ? "w-6 bg-accent-soft"
+                  ? "w-6 bg-secondary-soft"
                   : "w-2 bg-line-strong hover:bg-muted"
               }`}
             />
