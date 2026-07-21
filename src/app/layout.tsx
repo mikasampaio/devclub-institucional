@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, DM_Sans, Caveat } from "next/font/google";
 import "./globals.css";
+import CursorDot from "@/components/CursorDot";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -34,7 +35,10 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${dmSans.variable} ${caveat.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col overflow-x-clip">{children}</body>
+      <body className="min-h-full flex flex-col overflow-x-clip">
+        <CursorDot />
+        {children}
+      </body>
     </html>
   );
 }
