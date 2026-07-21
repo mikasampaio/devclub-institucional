@@ -9,9 +9,7 @@ import Image from "next/image";
 
 const NAV_LINKS = [
   { label: "Página Inicial", href: "#home" },
-  { label: "Formações", href: "#about" },
-  { label: "Faculdade", href: "#portfolio" },
-  { label: "Contato", href: "#contact" },
+  { label: "Formações", href: "#formacoes" },
   { label: "FAQ", href: "#faq" },
 ];
 
@@ -54,9 +52,15 @@ export default function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
-          <Button variant="outline" icon={<UserRound size={16} />}>
-            Área do aluno
-          </Button>
+          <Link
+            href="https://aulas.devclub.com.br/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button variant="outline" icon={<UserRound size={16} />}>
+              Área do aluno
+            </Button>
+          </Link>
 
           <Button icon={<ChevronsRight size={16} />}>Quero ser aluno</Button>
         </div>
@@ -100,9 +104,20 @@ export default function Header() {
                 </Link>
               ))}
 
-              <Button variant="outline" icon={<UserRound size={16} />}>
-                Área do aluno
-              </Button>
+              <Link
+                href="https://aulas.devclub.com.br/"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMenuOpen(false)}
+              >
+                <Button
+                  variant="outline"
+                  icon={<UserRound size={16} />}
+                  className="w-full"
+                >
+                  Área do aluno
+                </Button>
+              </Link>
 
               <Button icon={<ChevronsRight size={16} />}>
                 Quero ser aluno

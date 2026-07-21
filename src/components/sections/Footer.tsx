@@ -1,18 +1,18 @@
 import Link from "next/link";
+import Image from "next/image";
 
-const TEMPLATE_PAGES = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "Contact", href: "#contact" },
+const PAGES = [
+  { label: "Página Inicial", href: "#home" },
+  { label: "Formações", href: "#about" },
+  { label: "Contato", href: "#contact" },
   { label: "FAQ", href: "#faq" },
 ];
 
 const SOCIAL_LINKS = [
-  { label: "Twitter / X", href: "#" },
   { label: "Instagram", href: "#" },
   { label: "Youtube", href: "#" },
-  { label: "Framer", href: "#" },
+  { label: "TikTok", href: "#" },
+  { label: "LinkedIn", href: "#" },
 ];
 
 /** Footer: logo + tagline, colunas de links, newsletter e linha legal. */
@@ -25,27 +25,29 @@ export default function Footer() {
           <div>
             <Link
               href="#home"
-              className="flex items-center gap-2 text-lg font-bold"
+              className="flex items-center gap-2 font-display text-lg font-bold"
             >
-              <span
-                aria-hidden="true"
-                className="flex h-7 w-7 items-center justify-center rounded-lg bg-accent text-sm text-white"
-              >
-                N
-              </span>
-              Nubien
+              <Image
+                src="/logo-devclub.png"
+                alt="Logo DevClub"
+                width={28}
+                height={28}
+                className="h-7 w-7 rounded-lg object-contain"
+              />
+              DevClub
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted">
-              Made remotely with 💜 and passion
-              <br />– Westhill Studio.
+              Transformando carreiras em tecnologia, do zero ao
+              <br />
+              profissional.
             </p>
           </div>
 
           {/* Páginas */}
-          <nav aria-label="Páginas do template">
-            <h3 className="text-sm font-semibold">Template Pages</h3>
+          <nav aria-label="Páginas do site">
+            <h3 className="text-sm font-semibold">Páginas</h3>
             <ul className="mt-4 flex flex-col gap-2.5">
-              {TEMPLATE_PAGES.map((page) => (
+              {PAGES.map((page) => (
                 <li key={page.label}>
                   <Link
                     href={page.href}
@@ -60,7 +62,7 @@ export default function Footer() {
 
           {/* Social */}
           <nav aria-label="Redes sociais">
-            <h3 className="text-sm font-semibold">Social</h3>
+            <h3 className="text-sm font-semibold">Redes Sociais</h3>
             <ul className="mt-4 flex flex-col gap-2.5">
               {SOCIAL_LINKS.map((social) => (
                 <li key={social.label}>
@@ -77,9 +79,10 @@ export default function Footer() {
 
           {/* Newsletter */}
           <div>
-            <h3 className="text-sm font-semibold">Subscribe Us</h3>
+            <h3 className="text-sm font-semibold">Assine nossa lista</h3>
             <p className="mt-4 text-sm text-muted">
-              Get AI insights and updates straight to your inbox.
+              Receba dicas de programação e novidades do DevClub direto no seu
+              e-mail.
             </p>
             <form
               className="mt-4 flex gap-2"
@@ -93,14 +96,14 @@ export default function Footer() {
                 id="newsletter-email"
                 type="email"
                 required
-                placeholder="name@email.com"
+                placeholder="seu@email.com"
                 className="w-full rounded-xl border border-line bg-white/[0.04] px-4 py-2.5 text-sm text-foreground placeholder:text-faded focus:border-accent focus:outline-none"
               />
               <button
                 type="submit"
                 className="shrink-0 rounded-xl bg-accent px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-accent-soft"
               >
-                Subscribe
+                Inscrever
               </button>
             </form>
           </div>
@@ -109,20 +112,20 @@ export default function Footer() {
         {/* Linha legal */}
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-line pt-8 sm:flex-row">
           <p className="text-xs text-faded">
-            © {new Date().getFullYear()} Nubien. All rights reserved.
+            © {new Date().getFullYear()} DevClub. Todos os direitos reservados.
           </p>
           <div className="flex gap-6">
             <a
               href="#"
               className="text-xs text-faded transition-colors hover:text-foreground"
             >
-              Terms &amp; Conditions
+              Termos de Uso
             </a>
             <a
               href="#"
               className="text-xs text-faded transition-colors hover:text-foreground"
             >
-              Privacy Policy
+              Política de Privacidade
             </a>
           </div>
         </div>
