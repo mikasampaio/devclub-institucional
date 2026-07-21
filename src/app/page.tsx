@@ -4,14 +4,7 @@ import About from "@/components/sections/About";
 import Formacoes from "@/components/sections/Formacoes";
 import Tecnologias from "@/components/sections/Tecnologias";
 import Plataforma from "@/components/sections/Plataforma";
-import Features from "@/components/sections/Features";
-import Services from "@/components/sections/Services";
-import Portfolio from "@/components/sections/Portfolio";
-import Support from "@/components/sections/Support";
-import AboutNubien from "@/components/sections/AboutNubien";
 import Pricing from "@/components/sections/Pricing";
-import Process from "@/components/sections/Process";
-import CtaLaunch from "@/components/sections/CtaLaunch";
 import Team from "@/components/sections/Team";
 import Certificados from "@/components/sections/Certificados";
 import Comparison from "@/components/sections/Comparison";
@@ -22,6 +15,8 @@ import CtaFinal from "@/components/sections/CtaFinal";
 import Footer from "@/components/sections/Footer";
 import GalaxyLoader from "@/components/GalaxyLoader";
 import GuaranteeSection from "@/components/sections/GuaranteeSection";
+import Diferencials from "@/components/sections/Diferencials";
+import Projects from "@/components/sections/Projects";
 /** Home: monta todas as seções na ordem do layout de referência. */
 export default function Home() {
   return (
@@ -30,31 +25,23 @@ export default function Home() {
       <main>
         {/* <GalaxyLoader/> */}
         <Hero />
-        {/* <About /> */}
         <Formacoes />
         <Tecnologias />
+        <Diferencials />
         <Plataforma />
+        <Projects />
         <Testimonials />
-
         <Team />
+
         <Certificados />
         <SalaryComparison />
         <GuaranteeSection
           title="E se eu não curtir?"
           description="Experimente sem risco. Se nos primeiros dias você sentir que não é pra você, devolvemos 100% do seu investimento — sem burocracia e sem perguntas."
-          days={15}
+          days={7}
         />
         <Faq />
 
-        <Features />
-        <Services />
-        <Portfolio />
-        <Support />
-        <AboutNubien />
-        <Pricing />
-        <Process />
-        <CtaLaunch />
-        <Comparison />
         <CtaFinal />
       </main>
       <Footer />
