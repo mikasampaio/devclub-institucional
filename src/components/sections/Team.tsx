@@ -8,13 +8,13 @@ import BottomFade from "@/components/ui/BottomFade";
 export default function Team() {
   return (
     <section className="relative mx-auto overflow-hidden py-24">
-      {/* Glow roxo forte tipo holofote (só o brilho borrado, sem os raios dentro) */}
+      {/* Glow roxo forte */}
       <div
         aria-hidden="true"
         className="absolute left-1/2 top-0 h-96 w-[80%] -translate-x-1/2 rounded-[100%]  blur-[120px]"
       />
 
-      {/* Raios de luz — imagem estática, só pra comparar com a versão em CSS */}
+      {/* Raios de luz */}
       <Image
         src="/light_rays.avif"
         alt=""

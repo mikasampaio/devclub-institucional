@@ -49,7 +49,7 @@ const PLANS = [
 /** Pricing: 3 planos, com o Professional destacado como "Most Pick". */
 export default function ricing() {
   return (
-    <section className="mx-auto max-w-6xl px-5 py-24 sm:py-32">
+    <section className="mx-auto max-w-[80rem] px-5 py-24 sm:py-32">
       <SectionHeading
         badge="Pricing"
         title={

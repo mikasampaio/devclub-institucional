@@ -3,7 +3,6 @@ import { TESTIMONIALS } from "./testimonials";
 import Author from "./Author";
 import VideoThumbCompact from "./VideoThumbCompact";
 
-/** Versão mosaico (masonry) dos depoimentos. */
 export default function MosaicoView() {
   return (
     <div className="columns-1 gap-5 sm:columns-2 lg:columns-3">

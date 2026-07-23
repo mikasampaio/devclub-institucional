@@ -7,15 +7,6 @@ import { CERTIFICATES } from "./certificates";
 import CertificateCard from "./CertificateCard";
 import Dock, { type DockItemData } from "./Dock";
 
-/**
- * Carrossel de certificados: mostra o card atual centralizado e uma fatia dos
- * vizinhos. Abaixo, um Dock (React Bits) funciona como abas — passar o mouse
- * ou clicar navega o carrossel e o item do card ativo fica colorido.
- *
- * O estado do Embla (índice ativo) é lido via `useEmblaState`
- * (useSyncExternalStore) para respeitar o lint do projeto — sem setState em
- * effect. Ver [[lint-react-compiler-rules]].
- */
 export default function CertificateCarousel() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     // "center" mantém o card ativo no meio da tela. `containScroll: false` é
@@ -34,8 +25,6 @@ export default function CertificateCarousel() {
     [emblaApi],
   );
 
-  // Itens do Dock derivados dos certificados: ícone do curso + navegação.
-  // O item ativo recebe a cor do curso (mantém a paleta dos chips antigos).
   const dockItems: DockItemData[] = CERTIFICATES.map((certificate, i) => {
     const Icon = certificate.icon;
     const active = i === selectedIndex;
@@ -69,8 +58,6 @@ export default function CertificateCarousel() {
             {CERTIFICATES.map((certificate) => (
               <div
                 key={certificate.id}
-                // Um card por vez no mobile; no desktop, centralizado com peek
-                // dos dois lados (largura relativa à tela por causa do bleed).
                 className="min-w-0 shrink-0 grow-0 basis-full md:basis-[80%] lg:basis-[62%] xl:basis-[52%]"
               >
                 <CertificateCard certificate={certificate} />
@@ -80,9 +67,7 @@ export default function CertificateCarousel() {
         </div>
 
         {/* Máscaras laterais: fade da cor de fundo sobre as bordas da tela,
-            escondendo o "corte" dos cards que sangram. Só no desktop (no
-            mobile é um card por vez, sem peek). pointer-events-none p/ não
-            bloquear o arrasto. */}
+            escondendo o "corte" dos cards que sangram. */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-y-0 left-0 z-10 hidden w-16 bg-linear-to-r from-background to-transparent md:block lg:w-32"

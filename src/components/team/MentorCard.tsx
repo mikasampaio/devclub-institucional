@@ -7,12 +7,6 @@ import { Plus, X } from "lucide-react";
 import type { Mentor } from "./mentors";
 import MentorAvatar from "./MentorAvatar";
 
-/**
- * Card de mentor com dois lados:
- *  - Frente: foto + nome/profissão e um botão "+" no canto.
- *  - Verso: bio e áreas de atuação, revelados ao clicar no "+".
- * O flip é um rotateY 3D; cada face esconde o próprio verso (backface-hidden).
- */
 export default function MentorCard({ mentor }: { mentor: Mentor }) {
   const [open, setOpen] = useState(false);
 
@@ -30,10 +24,6 @@ export default function MentorCard({ mentor }: { mentor: Mentor }) {
   );
 }
 
-/* -------------------------------------------------------------------------- */
-/* Frente — foto + nome/profissão + botão "+"                                  */
-/* -------------------------------------------------------------------------- */
-
 function CardFront({
   mentor,
   onOpen,
@@ -43,7 +33,6 @@ function CardFront({
 }) {
   return (
     <div className="absolute inset-0 overflow-hidden rounded-card border border-line bg-surface backface-hidden">
-      {/* Foto do mentor — placeholder em avatar gerado enquanto não há imagem real */}
       {mentor.image ? (
         <Image
           src={mentor.image}
@@ -104,7 +93,6 @@ function CardBack({
   return (
     <div onClick={onClose} className="absolute inset-0 flex flex-col overflow-hidden rounded-card border border-line-strong bg-surface p-6 backface-hidden transform-[rotateY(180deg)]">
       <div className="flex items-center justify-between">
-        {/* Avatar do mentor */}
         {mentor.image ? (
           <Image
             src={mentor.image}

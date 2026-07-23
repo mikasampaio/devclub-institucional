@@ -2,12 +2,11 @@ import Reveal from "@/components/ui/Reveal";
 import SectionHeading, { TitleContrast } from "@/components/ui/SectionHeading";
 import CertificateCarousel from "@/components/certificates/CertificateCarousel";
 
-/** Certificados: carrossel de cards oficiais navegável por chips de curso. */
 export default function Certificados() {
   return (
     <section
       id="certificados"
-      className="mx-auto max-w-6xl px-5 py-24 sm:py-32"
+      className="mx-auto max-w-[80rem] px-5 py-24 sm:py-32"
     >
       <SectionHeading
         badge="Certificação"

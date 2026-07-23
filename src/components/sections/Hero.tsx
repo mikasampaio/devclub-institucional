@@ -42,7 +42,6 @@ const students = [
   "/professionals/5.jpg",
 ];
 
-/** Hero: badge, título grande com contraste, subtítulo, CTAs e faixa de logos. */
 export default function Hero() {
   return (
     <section
@@ -51,11 +50,6 @@ export default function Hero() {
     >
       {/* Glow radial roxo de fundo */}
       <div aria-hidden="true" className="glow-radial absolute inset-0 z-0" />
-
-      {/* Arco de brilho roxo ancorado na base */}
-      <PurpleGlow animate />
-
-      <BottomFade />
 
       <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center px-5 text-center">
         <motion.div
@@ -173,6 +167,11 @@ export default function Hero() {
           </div>
         </motion.div>
       </div>
+
+      {/* Arco de brilho roxo ancorado na base */}
+      <PurpleGlow animate />
+
+      <BottomFade />
     </section>
   );
 }

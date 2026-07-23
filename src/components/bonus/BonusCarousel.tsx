@@ -8,11 +8,6 @@ import SectionHeading, { TitleContrast } from "@/components/ui/SectionHeading";
 import { BONUS_CLASSES } from "./bonusClasses";
 import BonusClassCard from "./BonusClassCard";
 
-/**
- * Carrossel de aulas bônus — mesmo padrão Embla do TeamCarousel, mas com as
- * setas ao lado do título (layout pedido pelo mentor) em vez de abaixo do
- * carrossel.
- */
 export default function BonusCarousel() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "start",
@@ -27,9 +22,7 @@ export default function BonusCarousel() {
 
   return (
     <div>
-      {/* Só o cabeçalho fica contido — o carrossel abaixo é full-bleed,
-          igual ao de Team (a section não tem max-w). */}
-      <div className="mx-auto flex max-w-6xl items-end justify-between gap-6 px-5">
+      <div className="mx-auto flex max-w-[80rem] items-end justify-between gap-6 px-5">
         <SectionHeading
           badge="Bônus"
           align="left"
@@ -38,7 +31,7 @@ export default function BonusCarousel() {
             <>
               Módulos Bônus para te levar
               <br />
-              <TitleContrast>MAIS LONGE.</TitleContrast>
+              <TitleContrast>mais longe.</TitleContrast>
             </>
           }
         />

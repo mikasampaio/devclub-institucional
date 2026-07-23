@@ -22,15 +22,7 @@ import {
   SiGit,
   SiGithub,
   SiPython,
-  SiPandas,
-  SiNumpy,
-  SiScikitlearn,
-  SiPlotly,
-  SiSelenium,
   SiStreamlit,
-  SiJupyter,
-  SiLangchain,
-  SiCrewai,
   SiN8N,
 } from "react-icons/si";
 
@@ -39,15 +31,9 @@ gsap.registerPlugin(useGSAP);
 type Tech = {
   name: string;
   icon: ReactNode;
-  /** Cor da marca — ajustada quando a original fica escura demais no fundo dark. */
   color: string;
 };
 
-/**
- * Duas fileiras de tecnologias. Row 1 anda para a esquerda, Row 2 para a
- * direita — cobrindo Front, Back, Dados, IA e Automação (as trilhas do DevClub).
- * Para adicionar uma tech, inclua o ícone (react-icons/si) e a cor da marca.
- */
 const ROW_1: Tech[] = [
   { name: "HTML5", icon: <SiHtml5 />, color: "#E34F26" },
   { name: "CSS3", icon: <SiCss />, color: "#38BDF8" },
@@ -57,23 +43,19 @@ const ROW_1: Tech[] = [
   { name: "Next.js", icon: <SiNextdotjs />, color: "#FFFFFF" },
   { name: "Node.js", icon: <SiNodedotjs />, color: "#83C56F" },
   { name: "Tailwind", icon: <SiTailwindcss />, color: "#38BDF8" },
+];
+
+const ROW_2: Tech[] = [
   { name: "PostgreSQL", icon: <SiPostgresql />, color: "#6FA8FF" },
   { name: "Docker", icon: <SiDocker />, color: "#2496ED" },
   { name: "Git", icon: <SiGit />, color: "#F05032" },
   { name: "GitHub", icon: <SiGithub />, color: "#FFFFFF" },
-];
-
-const ROW_2: Tech[] = [
   { name: "Python", icon: <SiPython />, color: "#5A9FD4" },
   { name: "Streamlit", icon: <SiStreamlit />, color: "#FF4B4B" },
-  { name: "Jupyter", icon: <SiJupyter />, color: "#F37626" },
-  { name: "LangChain", icon: <SiLangchain />, color: "#6EE7B7" },
-  { name: "CrewAI", icon: <SiCrewai />, color: "#FF6A5C" },
   { name: "n8n", icon: <SiN8N />, color: "#F06595" },
   { name: "OpenAI", icon: <Sparkles />, color: "#A78BFA" },
 ];
 
-/** Pílula individual: ícone da marca + nome. */
 function TechPill({ tech, ariaHidden }: { tech: Tech; ariaHidden?: boolean }) {
   return (
     <span
@@ -92,7 +74,6 @@ function TechPill({ tech, ariaHidden }: { tech: Tech; ariaHidden?: boolean }) {
   );
 }
 
-/** Uma fileira do marquee: conteúdo duplicado para o loop infinito. */
 function Row({
   items,
   trackRef,
@@ -103,7 +84,6 @@ function Row({
   return (
     <div className="group flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
       <div ref={trackRef} className="flex w-max gap-3 pr-3">
-        {/* Conjunto visível + duplicata (aria-hidden) para emenda sem corte */}
         {items.map((tech) => (
           <TechPill key={tech.name} tech={tech} />
         ))}
@@ -115,11 +95,6 @@ function Row({
   );
 }
 
-/**
- * Tecnologias: marquee horizontal com loop infinito (GSAP).
- * Fileiras em sentidos opostos, velocidade constante independente da largura,
- * pausa no hover e respeito a prefers-reduced-motion (fica estático).
- */
 export default function Tecnologias() {
   const rootRef = useRef<HTMLElement>(null);
   const tracksRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -174,9 +149,8 @@ export default function Tecnologias() {
   return (
     <section
       ref={rootRef}
-      className="relative mx-auto max-w-6xl overflow-hidden px-5 py-12 sm:py-32"
+      className="relative overflow-hidden px-5 py-12 sm:py-32"
     >
-      {/* Raios de luz — mesma imagem estática usada em Team */}
       <Image
         src="/light_rays.avif"
         alt=""
@@ -186,7 +160,7 @@ export default function Tecnologias() {
 
       <BottomFade />
 
-      <div className="relative z-10">
+      <div className="relative mx-auto max-w-[80rem] z-10">
         <SectionHeading
           badge="Tecnologias"
           title={
@@ -200,8 +174,14 @@ export default function Tecnologias() {
         />
 
         <Reveal delay={0.15} className="mt-14 flex flex-col gap-3">
-          <Row items={ROW_1} trackRef={(el) => void (tracksRef.current[0] = el)} />
-          <Row items={ROW_2} trackRef={(el) => void (tracksRef.current[1] = el)} />
+          <Row
+            items={ROW_1}
+            trackRef={(el) => void (tracksRef.current[0] = el)}
+          />
+          <Row
+            items={ROW_2}
+            trackRef={(el) => void (tracksRef.current[1] = el)}
+          />
         </Reveal>
       </div>
     </section>

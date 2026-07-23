@@ -29,6 +29,7 @@ export default function PurpleGlow({ className, animate = false }: PurpleGlowPro
         priority
         className={cn(
           "h-auto w-full translate-y-[38%] object-contain object-bottom",
+          "mask-[linear-gradient(to_top,black_55%,transparent)]",
           animate && "animate-glow-pulse"
         )}
       />

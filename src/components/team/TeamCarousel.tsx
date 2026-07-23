@@ -7,11 +7,6 @@ import { MENTORS } from "./mentors";
 import MentorCard from "./MentorCard";
 import CarouselArrow from "./CarouselArrow";
 
-/**
- * Carrossel de mentores com Embla (headless): o hook cuida do scroll/snap e o
- * markup/estilo continuam nossos. O estado (índice, limites das setas) é lido
- * via useEmblaState — sem setState em effect, respeitando o lint do projeto.
- */
 export default function TeamCarousel() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "start",

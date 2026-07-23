@@ -20,7 +20,7 @@ const NUBIEN = [
 /** Comparison: duas colunas — concorrência (X vermelho) vs Nubien (check roxo). */
 export default function Comparison() {
   return (
-    <section className="mx-auto max-w-6xl px-5 py-24 sm:py-32">
+    <section className="mx-auto max-w-[80rem] px-5 py-24 sm:py-32">
       <SectionHeading
         badge="Comparison"
         title={

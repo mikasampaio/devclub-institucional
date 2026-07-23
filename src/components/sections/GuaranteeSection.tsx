@@ -4,10 +4,6 @@ import { motion, useReducedMotion } from "framer-motion";
 import { Check } from "lucide-react";
 import { cn } from "@/lib/cn";
 
-/* -------------------------------------------------------------------------- */
-/* Tipos públicos                                                              */
-/* -------------------------------------------------------------------------- */
-
 export interface GuaranteeSectionProps {
   /** Título grande da seção. Ex: "E se eu não curtir?". */
   title: string;
@@ -84,11 +80,6 @@ function GuaranteeBadge({ days }: GuaranteeBadgeProps) {
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.6, ease: EASE }}
     >
-      {/* Contorno ondulado do selo. Fundo claro via `primary-contrast`
-          (o `background` deste tema é quase-preto e sumiria sobre o roxo).
-          Recolorido por `currentColor`, então serve a qualquer tema.
-          Gira em loop linear infinito — só o contorno, para o miolo (check +
-          prazo) permanecer legível. Desligado sob `prefers-reduced-motion`. */}
       <motion.svg
         viewBox="0 0 100 100"
         className="absolute inset-0 h-full w-full text-primary-contrast drop-shadow-xl"
@@ -100,7 +91,6 @@ function GuaranteeBadge({ days }: GuaranteeBadgeProps) {
         <path d={SEAL_PATH} fill="currentColor" />
       </motion.svg>
 
-      {/* Miolo do selo: check + prazo, na cor primária do tema. */}
       <div className="relative flex flex-col items-center gap-1 text-secondary">
         <Check aria-hidden="true" strokeWidth={3} className="h-9 w-9" />
         <span className="text-4xl font-bold leading-none">{days}</span>
@@ -125,15 +115,12 @@ export default function GuaranteeSection({
   return (
     <section
       className={cn(
-        // Full-bleed: escapa de qualquer container e ocupa 100vw, centralizado.
-        // `flex items-center` centraliza o conteúdo verticalmente na altura cheia.
         "relative left-1/2 right-1/2 -mx-[50vw] flex h-screen w-screen items-center",
         "bg-secondary text-primary-contrast",
         className,
       )}
     >
-      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-12 px-5 py-16 sm:py-20 md:grid-cols-2 md:gap-16 md:py-24">
-        {/* Texto — primeiro no DOM, à esquerda no desktop */}
+      <div className="mx-auto grid w-full max-w-[80rem] grid-cols-1 items-center gap-12 px-5 py-16 sm:py-20 md:grid-cols-2 md:gap-16 md:py-24">
         <div className="flex flex-col gap-8">
           <h2 className="text-6xl font-medium tracking-tight text-balance sm:text-5xl">
             {title}
@@ -143,7 +130,6 @@ export default function GuaranteeSection({
           </p>
         </div>
 
-        {/* Selo — abaixo/centralizado no mobile, à direita no desktop */}
         <div className="flex justify-center md:justify-end">
           <GuaranteeBadge days={days} />
         </div>

@@ -11,23 +11,16 @@ import MosaicoView from "@/components/testimonials/MosaicoView";
 import LightRays from "@/components/LightRays";
 import { DotPattern } from "../ui/dot-pattern";
 
-/**
- * Depoimentos/Transformação: duas versões da mesma dobra, alternadas por um
- * segmented control — carrossel (formato de referência) e mosaico. Só uma
- * aparece por vez para facilitar a comparação sem duplicar na tela.
- */
 export default function Testimonials() {
   const [view, setView] = useState<ViewMode>("carrossel");
 
   return (
-    <section className="relative overflow-hidden mx-5 rounded-2xl border border-line px-5 py-24">
-      {/* Glow roxo forte tipo holofote (só o brilho borrado, sem os raios dentro) */}
+    <section className="relative mx-auto overflow-hidden max-w-[80rem] rounded-2xl border border-line px-5 py-24 mb-24">
       <div
         aria-hidden="true"
         className="absolute left-1/2 top-0 h-96 w-[80%] -translate-x-1/2 rounded-[100%] bg-accent/30 blur-[120px]"
       />
 
-      {/* Raios de luz WebGL — camada própria, sem blur, atrás do conteúdo */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
         <LightRays
           raysOrigin="top-center"
@@ -54,7 +47,7 @@ export default function Testimonials() {
         />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-6xl">
+      <div className="relative z-10 mx-auto max-w-[80rem]">
         <SectionHeading
           badge="Depoimentos"
           title={

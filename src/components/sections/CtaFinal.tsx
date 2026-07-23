@@ -13,12 +13,10 @@ export default function CtaFinal() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden border border-accent/20 border-b-0! rounded-2xl mx-4 my-10 max-w-6xl px-5 py-16 sm:mx-6 sm:px-8 sm:py-20 lg:mx-auto"
+      className="relative overflow-hidden border border-accent/10 rounded-2xl mx-4 my-10 max-w-6xl px-5 py-16 sm:mx-6 sm:px-8 sm:py-20 lg:mx-auto"
     >
-      {/* Glow radial roxo de fundo */}
       <div aria-hidden="true" className="glow-radial absolute inset-0" />
 
-      {/* Raios de luz WebGL — camada própria, sem blur, atrás do conteúdo */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
         <LightRays
           raysOrigin="top-center"

@@ -3,10 +3,6 @@ import { Play } from "lucide-react";
 import MentorAvatar from "@/components/team/MentorAvatar";
 import type { BonusClass } from "./bonusClasses";
 
-/**
- * Card de aula bônus: retrato do especialista + nome/tópico + pílula de
- * duração com play. Sem verso/flip — é uma aula, não uma bio.
- */
 export default function BonusClassCard({
   bonusClass,
 }: {

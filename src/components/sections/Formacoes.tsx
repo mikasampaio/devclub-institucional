@@ -13,15 +13,10 @@ type Area = {
   title: string;
   description: string;
   trilhas: string[];
-  /** Recebe a cor de destaque da área para "furar" o ícone (cutouts na cor do fundo sólido). */
   icon: (accent: string) => ReactNode;
   accent: string;
 };
 
-/**
- * As 14 trilhas agrupadas em 5 áreas — cada área vira um card largo.
- * Para adicionar uma trilha, basta incluí-la no array `trilhas` da área.
- */
 const AREAS: Area[] = [
   {
     title: "Front End",
@@ -164,8 +159,7 @@ export default function Formacoes() {
   return (
     <section id="formacoes" ref={rootRef} className="relative overflow-hidden">
       <div className="flex flex-col justify-center gap-12 py-24 sm:py-32 md:min-h-screen md:py-0">
-        {/* Cabeçalho contido, alinhado às demais seções */}
-        <div className="mx-auto w-full max-w-6xl px-5">
+        <div className="mx-auto w-full max-w-[80rem] px-5">
           <SectionHeading
             badge="Formações"
             title={
@@ -190,7 +184,6 @@ export default function Formacoes() {
               className="w-[86vw] shrink-0 snap-start sm:w-[560px] lg:w-[640px]"
             >
               <div className="group grid h-full grid-cols-1 overflow-hidden rounded-card border border-line bg-surface transition-colors duration-300 hover:border-line-strong sm:grid-cols-[minmax(0,42%)_1fr]">
-                {/* Visual — ícone branco/furado sobre fundo sólido na cor de destaque da área */}
                 <div
                   className="relative flex min-h-[160px] items-center justify-center p-8 sm:min-h-[300px]"
                   style={{ backgroundColor: area.accent }}

@@ -5,11 +5,9 @@ import BonusCarousel from "@/components/bonus/BonusCarousel";
 import LightRays from "@/components/LightRays";
 import { DotPattern } from "@/components/ui/dot-pattern";
 
-/** Bônus: carrossel de aulas extras com especialistas convidados. */
 export default function Bonus() {
   return (
     <section className="relative mx-auto overflow-hidden py-24">
-      {/* Raios de luz WebGL — mesma camada usada em Testimonials */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
         <LightRays
           raysOrigin="top-center"

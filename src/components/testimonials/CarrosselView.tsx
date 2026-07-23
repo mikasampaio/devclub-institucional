@@ -80,7 +80,6 @@ export default function CarrosselView() {
           />
         </div>
 
-        {/* Controles: setas + dots de paginação */}
         <div className="mt-6 flex items-center justify-center gap-5">
           <NavArrow direction="prev" onClick={scrollPrev} disabled={!canPrev} />
 

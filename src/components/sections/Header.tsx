@@ -10,6 +10,7 @@ import Image from "next/image";
 const NAV_LINKS = [
   { label: "Página Inicial", href: "#home" },
   { label: "Formações", href: "#formacoes" },
+  { label: "Faculdade", href: "#plataforma" },
   { label: "FAQ", href: "#faq" },
 ];
 
@@ -19,7 +20,7 @@ export default function Header() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-background/70 backdrop-blur-lg">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
+      <div className="mx-auto flex h-16 max-w-[80rem] items-center justify-between px-5">
         {/* Logo */}
         <Link
           href="#home"
@@ -38,13 +39,13 @@ export default function Header() {
         {/* Menu desktop */}
         <nav
           aria-label="Principal"
-          className="hidden items-center gap-8 md:flex"
+          className="hidden items-center justify-center gap-8 md:flex"
         >
           {NAV_LINKS.map((link) => (
             <Link
               key={link.label}
               href={link.href}
-              className="text-sm font-normal text-muted transition-colors hover:text-foreground"
+              className="text-sm font-medium transition-colors hover:opacity-90 hover:text-foreground"
             >
               {link.label}
             </Link>

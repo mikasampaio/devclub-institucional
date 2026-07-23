@@ -1,8 +1,7 @@
 "use client";
 
 import Image, { type StaticImageData } from "next/image";
-import { useReducedMotion } from "framer-motion";
-import { Parallax, ParallaxProvider } from "react-scroll-parallax";
+import { Parallax } from "react-scroll-parallax";
 import Reveal from "@/components/ui/Reveal";
 import SectionHeading from "@/components/ui/SectionHeading";
 import pageOne from "@/components/projects/assets/page_one.png";
@@ -14,7 +13,6 @@ type ShowcaseProject = {
   alt: string;
 };
 
-/** Landing pages inteiras (screenshots verticais) feitas por alunos. */
 const PROJECTS: ShowcaseProject[] = [
   {
     src: pageOne,
@@ -30,12 +28,11 @@ const PROJECTS: ShowcaseProject[] = [
   },
 ];
 
-/** Projetos: galeria de 3 landing pages inteiras em colunas com parallax. */
 export default function Projects() {
   return (
     <section
       id="project"
-      className="flex flex-col gap-20 mx-auto max-w-6xl px-5 py-24"
+      className="flex flex-col gap-20 mx-auto px-5 py-24"
     >
       <SectionHeading
         badge="Projetos dos alunos"
@@ -52,7 +49,6 @@ export default function Projects() {
                   alt={project.alt}
                   placeholder="blur"
                   sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                  // Import estático fornece width/height/blurDataURL automaticamente
                   style={{ width: "100%", height: "auto" }}
                   {...(i === 0 ? { preload: true } : {})}
                 />
