@@ -15,7 +15,7 @@ export const MENTORS: Mentor[] = [
     role: "Fundador & Mentor Chefe",
     bio: "Fundador do DevClub e mentor há mais de 10 anos. Já formou milhares de desenvolvedores do zero à primeira vaga, com foco em carreira, mentalidade e projetos reais de mercado.",
     skills: ["Carreira", "JavaScript", "Liderança"],
-    image: "/professionals/4.jpg",
+    image: "/professionals/rodolfo.png",
   },
   {
     name: "Fernanda Lima",
