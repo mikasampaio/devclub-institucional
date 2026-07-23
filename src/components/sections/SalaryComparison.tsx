@@ -2,17 +2,12 @@ import SalaryComparisonCard, {
   type SalaryLevel,
 } from "@/components/ui/SalaryComparisonCard";
 
-/** Dados de referência — Desenvolver Full-Stack, valores anuais. */
 const DEVELOPER: SalaryLevel[] = [
   { level: "Júnior", brasil: 89_050, internacional: 69_069 },
   { level: "Pleno", brasil: 161_200, internacional: 112_306 },
   { level: "Sênior", brasil: 211_250, internacional: 137_777 },
 ];
 
-/**
- * Exemplo de uso na página: envolve o card num <section>. O card em si é o
- * único trecho client-side; a section permanece Server Component.
- */
 export default function SalaryComparison() {
   return (
     <section className="px-5 py-24 sm:py-32">
