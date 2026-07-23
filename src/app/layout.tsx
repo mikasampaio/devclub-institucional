@@ -20,9 +20,9 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-  title: "Nubien — Next-Gen AI Studio",
+  title: "DevClub — A Escola das Profissões do Futuro",
   description:
-    "AI-Driven Success Redefining the Future. Creating latest solutions that redefine innovation.",
+    "Do zero à primeira vaga em tecnologia. Aprenda a programar com metodologia prática, projetos reais e mentoria de quem já vive o mercado. +25 mil alunos já passaram por aqui.",
 };
 
 export default function RootLayout({
@@ -32,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="pt-br"
       className={`${inter.variable} ${dmSans.variable} ${caveat.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col overflow-x-clip">
