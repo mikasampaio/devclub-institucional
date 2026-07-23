@@ -138,15 +138,18 @@ export default function Plataforma() {
   );
 
   return (
-    <section ref={rootRef} className="mx-auto max-w-6xl px-5 py-24 sm:py-32">
+    <section
+      id="plataforma"
+      ref={rootRef}
+      className="mx-auto max-w-[80rem] px-5 py-24 sm:py-32"
+    >
       <SectionHeading
         badge="Plataforma"
         title={
           <>
-            Você terá acesso a uma plataforma moderna de aulas, comunidade, área
-            de vagas e IA&apos;s para acelerar seu progresso
+            Aprenda, pratique e evolua em uma plataforma feita pra você
             <br />
-            <TitleContrast>e tudo com suporte dos professores</TitleContrast>
+            <TitleContrast>com suporte dos professores</TitleContrast>
           </>
         }
         description="Tudo em um só lugar: onde você assiste às aulas, evolui nas trilhas, troca com a comunidade e conta com IA e professores a cada passo."

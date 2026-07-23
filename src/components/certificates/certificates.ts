@@ -50,7 +50,7 @@ export const CERTIFICATES: Certificate[] = [
     title: "Certificado de Conclusão do Full Stack",
     student: "Vitor Fernandes Rodrigues de Barros",
     hours: 480,
-    signer: "Kácio Filipe",
+    signer: "Rodolfo Mori",
     icon: Braces,
     theme: {
       surface: "#c9f24a",
@@ -66,7 +66,7 @@ export const CERTIFICATES: Certificate[] = [
     title: "Certificado de Conclusão do Front-end",
     student: "Mariana Oliveira Costa",
     hours: 220,
-    signer: "Kácio Filipe",
+    signer: "Rodolfo Mori",
     icon: Layout,
     theme: {
       surface: "#d64b3f",
@@ -82,7 +82,7 @@ export const CERTIFICATES: Certificate[] = [
     title: "Certificado de Conclusão do Back-end",
     student: "Rafael Santos Almeida",
     hours: 260,
-    signer: "Kácio Filipe",
+    signer: "Rodolfo Mori",
     icon: Server,
     theme: {
       surface: "#7c3aed",
@@ -98,7 +98,7 @@ export const CERTIFICATES: Certificate[] = [
     title: "Certificado de Conclusão do Mobile",
     student: "Beatriz Lima Ferreira",
     hours: 180,
-    signer: "Kácio Filipe",
+    signer: "Rodolfo Mori",
     icon: Smartphone,
     theme: {
       surface: "#22b8cf",
@@ -114,7 +114,7 @@ export const CERTIFICATES: Certificate[] = [
     title: "Certificado de Conclusão do UI/UX Design",
     student: "Lucas Pereira Nunes",
     hours: 160,
-    signer: "Kácio Filipe",
+    signer: "Rodolfo Mori",
     icon: Palette,
     theme: {
       surface: "#f59f00",
