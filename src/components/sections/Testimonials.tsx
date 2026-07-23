@@ -15,7 +15,7 @@ export default function Testimonials() {
   const [view, setView] = useState<ViewMode>("carrossel");
 
   return (
-    <section className="relative mx-auto overflow-hidden max-w-[80rem] rounded-2xl border border-line px-5 py-24 mb-24">
+    <section className="relative mx-auto overflow-hidden max-w-[80rem] rounded-2xl border border-line lg:px-5 py-24 mb-24">
       <div
         aria-hidden="true"
         className="absolute left-1/2 top-0 h-96 w-[80%] -translate-x-1/2 rounded-[100%] bg-accent/30 blur-[120px]"
