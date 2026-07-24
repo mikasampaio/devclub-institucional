@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DevClub — Landing Institucional
 
-## Getting Started
+Landing page institucional do DevClub, uma escola de programação. O projeto reconstrói a página de vendas com foco em performance, animações fluidas e uma arquitetura de componentes organizada por seção.
 
-First, run the development server:
+**🔗 Ver ao vivo:** [devclub-institucional-ia.vercel.app](https://devclub-institucional-ia.vercel.app/)
+
+> Desafio técnico — desenvolvido por [Mikaeli Sampaio](https://github.com/mikasampaio).
+
+## Stack
+
+- **[Next.js 16](https://nextjs.org)** (App Router) + **React 19**
+- **TypeScript**
+- **[Tailwind CSS 4](https://tailwindcss.com)** + **shadcn/ui** e **[Base UI](https://base-ui.com)**
+- **[GSAP](https://gsap.com)** e **[Framer Motion](https://motion.dev)** para animações
+- **[OGL](https://github.com/oframe/ogl)** para o efeito de galáxia (WebGL) no Hero
+- **[Embla Carousel](https://www.embla-carousel.com)** para os carrosséis
+- **[Vitest](https://vitest.dev)** + **Testing Library** para testes
+- **ESLint** + **Prettier**
+
+## Como rodar
+
+Pré-requisitos: **Node.js 20+** e **[pnpm](https://pnpm.io)**.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+# instalar dependências
+pnpm install
+
+# rodar em desenvolvimento
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000) no navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Outros scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+pnpm build         # build de produção
+pnpm start         # sobe o build de produção
+pnpm lint          # ESLint
+pnpm format        # Prettier (escrita)
+pnpm format:check  # Prettier (verificação)
+pnpm test          # testes (Vitest)
+pnpm test:watch    # testes em watch mode
+```
 
-## Learn More
+## Estrutura
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/                  # App Router (layout, page, estilos globais)
+├── components/
+│   ├── sections/         # seções da página (Hero, Team, Pricing, FAQ, ...)
+│   ├── ui/               # componentes de UI reutilizáveis
+│   ├── galaxy/           # efeito de galáxia em WebGL (OGL)
+│   ├── lightrays/        # efeito de raios de luz
+│   └── ...               # componentes agrupados por feature
+├── hooks/                # hooks customizados
+└── lib/                  # utilitários (cn, helpers)
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+A página inicial ([src/app/page.tsx](src/app/page.tsx)) monta as seções na ordem do layout de referência: Hero, Formações, Tecnologias, Diferenciais, Plataforma, Projetos, Depoimentos, Time, Bônus, Certificados, Comparação salarial, Garantia, FAQ e CTA final.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Decisões técnicas
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Organização por feature** — cada seção complexa tem sua própria pasta com componentes, dados (`.ts`) e estilos, mantendo o `page.tsx` enxuto e legível.
+- **Animações** — GSAP para animações ligadas a scroll e Framer Motion para transições de componentes; a galáxia do Hero usa WebGL via OGL para não pesar na thread principal.
+- **Dados desacoplados da UI** — conteúdos como depoimentos, mentores e certificados ficam em arquivos de dados próprios, separados dos componentes que os renderizam.
+- **Testes** — cobertura em componentes de lógica sensível (ex.: comparação salarial, seção de garantia) com Vitest + Testing Library.
