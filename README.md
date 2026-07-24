@@ -12,7 +12,7 @@ Landing page institucional do DevClub, uma escola de programação. O projeto re
 - **TypeScript**
 - **[Tailwind CSS 4](https://tailwindcss.com)** + **shadcn/ui** e **[Base UI](https://base-ui.com)**
 - **[GSAP](https://gsap.com)** e **[Framer Motion](https://motion.dev)** para animações
-- **[OGL](https://github.com/oframe/ogl)** para o efeito de galáxia (WebGL) no Hero
+- **[OGL](https://github.com/oframe/ogl)** para o efeito de raios de luz (WebGL)
 - **[Embla Carousel](https://www.embla-carousel.com)** para os carrosséis
 - **[Vitest](https://vitest.dev)** + **Testing Library** para testes
 - **ESLint** + **Prettier**
@@ -51,7 +51,6 @@ src/
 ├── components/
 │   ├── sections/         # seções da página (Hero, Team, Pricing, FAQ, ...)
 │   ├── ui/               # componentes de UI reutilizáveis
-│   ├── galaxy/           # efeito de galáxia em WebGL (OGL)
 │   ├── lightrays/        # efeito de raios de luz
 │   └── ...               # componentes agrupados por feature
 ├── hooks/                # hooks customizados
@@ -63,6 +62,6 @@ A página inicial ([src/app/page.tsx](src/app/page.tsx)) monta as seções na or
 ## Decisões técnicas
 
 - **Organização por feature** — cada seção complexa tem sua própria pasta com componentes, dados (`.ts`) e estilos, mantendo o `page.tsx` enxuto e legível.
-- **Animações** — GSAP para animações ligadas a scroll e Framer Motion para transições de componentes; a galáxia do Hero usa WebGL via OGL para não pesar na thread principal.
+- **Animações** — GSAP para animações ligadas a scroll e Framer Motion para transições de componentes.
 - **Dados desacoplados da UI** — conteúdos como depoimentos, mentores e certificados ficam em arquivos de dados próprios, separados dos componentes que os renderizam.
 - **Testes** — cobertura em componentes de lógica sensível (ex.: comparação salarial, seção de garantia) com Vitest + Testing Library.
