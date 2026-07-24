@@ -67,6 +67,41 @@
       opacity: 1;
     }
   }
+
+  /* Entrada do hero (fade + slide up). Em CSS puro para rodar já no primeiro
+     paint, sem depender de hidratação/JS — o conteúdo fica visível na hora. */
+  --animate-hero-in: hero-in 0.6s ease-out both;
+
+  @keyframes hero-in {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Variante só de fade, usada na faixa de logos */
+  --animate-hero-fade: hero-fade 0.8s ease-out both;
+
+  @keyframes hero-fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+/* Respeita quem pediu menos animação: mostra o conteúdo sem transição */
+@media (prefers-reduced-motion: reduce) {
+  .animate-hero-in,
+  .animate-hero-fade {
+    animation: none !important;
+  }
 }
 
 body {

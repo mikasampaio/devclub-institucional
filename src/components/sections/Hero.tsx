@@ -1,12 +1,13 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
 import PurpleGlow from "@/components/ui/PurpleGlow";
 import BottomFade from "@/components/ui/BottomFade";
+import GalaxyLoader from "@/components/galaxy/GalaxyLoader";
 import Image from "next/image";
 import { ChevronsRight } from "lucide-react";
+import LightRays from "../lightrays/LightRays";
 
 const companies = [
   { name: "Microsoft", logo: "/microsoft.png" },
@@ -51,43 +52,27 @@ export default function Hero() {
       {/* Glow radial roxo de fundo */}
       <div aria-hidden="true" className="glow-radial absolute inset-0 z-0" />
 
-      <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center px-5 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <Badge>A Escola das Profissões do Futuro</Badge>
-        </motion.div>
+      {/* Campo de estrelas (WebGL) sobre o glow — pausa fora da viewport */}
+      {/* <GalaxyLoader /> */}
 
-        <motion.h1
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="mt-6 text-4xl font-bold leading-[1.1] tracking-tight sm:text-6xl lg:text-7xl"
-        >
+      <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center px-5 text-center">
+        <div className="animate-hero-in">
+          <Badge>A Escola das Profissões do Futuro</Badge>
+        </div>
+
+        <h1 className="mt-6 animate-hero-in text-4xl font-medium leading-[1.1] tracking-tight [animation-delay:100ms] sm:text-6xl lg:text-7xl">
           Do zero à primeira vaga
           <br />
           <span className="text-faded">em tecnologia.</span>
-        </motion.h1>
+        </h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-6 max-w-lg text-base leading-relaxed text-muted sm:text-lg"
-        >
+        <p className="mt-6 max-w-lg animate-hero-in text-base leading-relaxed text-muted [animation-delay:200ms] sm:text-lg">
           Aprenda a programar com uma metodologia prática, projetos reais e
           mentoria de quem já vive o mercado de tecnologia.
-        </motion.p>
+        </p>
 
         <div className="flex items-center gap-4">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-8 flex flex-col gap-3 sm:flex-row"
-          >
+          <div className="mt-8 flex animate-hero-in flex-col gap-3 [animation-delay:300ms] sm:flex-row">
             <Button
               variant="secondary"
               className="bg-white! text-black!"
@@ -100,14 +85,9 @@ export default function Hero() {
             >
               Saiba mais
             </Button>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-10 flex items-center gap-3"
-          >
+          <div className="mt-10 flex animate-hero-in items-center gap-3 [animation-delay:400ms]">
             <div className="flex -space-x-3">
               {students.map((src) => (
                 <Image
@@ -127,16 +107,11 @@ export default function Hero() {
               <br />
               <span className="text-white">já passaram por aqui</span>
             </p>
-          </motion.div>
+          </div>
         </div>
 
         {/* Faixa de logos com glow roxo */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="relative mt-20 w-full"
-        >
+        <div className="relative mt-20 w-full animate-hero-fade [animation-delay:500ms]">
           <div
             aria-hidden="true"
             className="absolute -top-16 left-1/2 h-40 w-[120%] -translate-x-1/2 rounded-[100%] bg-accent/25 blur-3xl"
@@ -165,7 +140,7 @@ export default function Hero() {
               ))}
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
 
       {/* Arco de brilho roxo ancorado na base */}
