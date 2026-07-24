@@ -1,39 +1,37 @@
-"use client";
 import Header from "@/components/sections/Header";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
-import Formacoes from "@/components/sections/Formacoes";
-import Tecnologias from "@/components/sections/Tecnologias";
+import Formations from "@/components/sections/Formations";
+import Technologies from "@/components/sections/Technologies";
 import Plataforma from "@/components/sections/Plataforma";
 import Team from "@/components/sections/Team";
 import Bonus from "@/components/sections/Bonus";
-import Certificados from "@/components/sections/Certificados";
+import Certificates from "@/components/sections/Certificates";
 import SalaryComparison from "@/components/sections/SalaryComparison";
 import Testimonials from "@/components/sections/Testimonials";
 import Faq from "@/components/sections/Faq";
 import CtaFinal from "@/components/sections/CtaFinal";
 import Footer from "@/components/sections/Footer";
-import GalaxyLoader from "@/components/GalaxyLoader";
 import GuaranteeSection from "@/components/sections/GuaranteeSection";
-import Diferencials from "@/components/sections/Diferencials";
+import Differentials from "@/components/sections/Differentials";
 import Projects from "@/components/sections/Projects";
-import { ParallaxProvider } from "react-scroll-parallax";
+import ParallaxRoot from "@/components/providers/ParallaxRoot";
 /** Home: monta todas as seções na ordem do layout de referência. */
 export default function Home() {
   return (
-    <ParallaxProvider>
+    <ParallaxRoot>
       <Header />
       <main>
         <Hero />
-        <Formacoes />
-        <Tecnologias />
-        <Diferencials />
+        <Formations />
+        <Technologies />
+        <Differentials />
         <Plataforma />
         <Projects />
         <Testimonials />
         <Team />
         <Bonus />
-        <Certificados />
+        <Certificates />
         <SalaryComparison />
         <GuaranteeSection
           title="E se eu não curtir?"
@@ -44,6 +42,6 @@ export default function Home() {
         <CtaFinal />
       </main>
       <Footer />
-    </ParallaxProvider>
+    </ParallaxRoot>
   );
 }
