@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import SectionHeading, { TitleContrast } from "@/components/ui/SectionHeading";
-import { cn } from "@/lib/cn";
+import { cn } from "@/lib/utils";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -118,7 +118,7 @@ const AREAS: Area[] = [
  * dos cards (ScrollTrigger + pin + scrub). No mobile e com prefers-reduced-motion
  * cai para scroll nativo com snap — sem sequestrar o scroll da página.
  */
-export default function Formacoes() {
+export default function Formations() {
   const rootRef = useRef<HTMLElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
 

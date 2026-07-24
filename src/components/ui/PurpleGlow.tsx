@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { cn } from "@/lib/cn";
+import { cn } from "@/lib/utils";
 
 type PurpleGlowProps = {
   className?: string;
@@ -12,13 +12,16 @@ type PurpleGlowProps = {
  * `/public/PurpleGlow.avif`, que já vem com o preto de fundo embutido, então
  * as bordas se fundem com `--color-background` sem precisar de máscara.
  */
-export default function PurpleGlow({ className, animate = false }: PurpleGlowProps) {
+export default function PurpleGlow({
+  className,
+  animate = false,
+}: PurpleGlowProps) {
   return (
     <div
       aria-hidden="true"
       className={cn(
         "pointer-events-none absolute inset-x-0 bottom-0 z-0 overflow-hidden",
-        className
+        className,
       )}
     >
       <Image
@@ -30,7 +33,7 @@ export default function PurpleGlow({ className, animate = false }: PurpleGlowPro
         className={cn(
           "h-auto w-full translate-y-[38%] object-contain object-bottom",
           "mask-[linear-gradient(to_top,black_55%,transparent)]",
-          animate && "animate-glow-pulse"
+          animate && "animate-glow-pulse",
         )}
       />
     </div>

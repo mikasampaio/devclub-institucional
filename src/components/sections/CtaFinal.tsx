@@ -3,8 +3,8 @@
 import { ChevronsRight } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 import Button from "@/components/ui/Button";
-import LightRays from "@/components/LightRays";
-import { DotPattern } from "@/components/ui/dot-pattern";
+import LightRays from "@/components/lightrays/LightRays";
+import { DotPattern } from "@/components/ui/DotPattern";
 import SectionHeading, { TitleContrast } from "../ui/SectionHeading";
 import BottomFade from "../ui/BottomFade";
 

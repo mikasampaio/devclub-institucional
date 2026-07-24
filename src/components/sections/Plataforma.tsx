@@ -7,7 +7,7 @@ import { useGSAP } from "@gsap/react";
 import { MonitorPlay, Route, Users, Bot, Gamepad2, Trophy } from "lucide-react";
 import SectionHeading, { TitleContrast } from "@/components/ui/SectionHeading";
 import Button from "@/components/ui/Button";
-import { DotPattern } from "@/components/ui/dot-pattern";
+import { DotPattern } from "@/components/ui/DotPattern";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 

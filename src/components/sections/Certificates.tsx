@@ -2,7 +2,7 @@ import Reveal from "@/components/ui/Reveal";
 import SectionHeading, { TitleContrast } from "@/components/ui/SectionHeading";
 import CertificateCarousel from "@/components/certificates/CertificateCarousel";
 
-export default function Certificados() {
+export default function Certificates() {
   return (
     <section
       id="certificados"

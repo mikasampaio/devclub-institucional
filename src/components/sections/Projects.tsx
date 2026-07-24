@@ -1,32 +1,10 @@
 "use client";
 
-import Image, { type StaticImageData } from "next/image";
+import Image from "next/image";
 import { Parallax } from "react-scroll-parallax";
 import Reveal from "@/components/ui/Reveal";
 import SectionHeading from "@/components/ui/SectionHeading";
-import pageOne from "@/components/projects/assets/page_one.png";
-import pageTwo from "@/components/projects/assets/page_two.png";
-import pageThree from "@/components/projects/assets/page_three.png";
-
-type ShowcaseProject = {
-  src: StaticImageData;
-  alt: string;
-};
-
-const PROJECTS: ShowcaseProject[] = [
-  {
-    src: pageOne,
-    alt: "Landing page de app financeiro criada por aluno da Academy Skills",
-  },
-  {
-    src: pageTwo,
-    alt: "Landing page de banco digital criada por aluno da Academy Skills",
-  },
-  {
-    src: pageThree,
-    alt: "Landing page de plataforma de investimentos criada por aluno da Academy Skills",
-  },
-];
+import { PROJECTS } from "@/components/projects/projects";
 
 export default function Projects() {
   return (

@@ -2,8 +2,8 @@
 
 import Reveal from "@/components/ui/Reveal";
 import BonusCarousel from "@/components/bonus/BonusCarousel";
-import LightRays from "@/components/LightRays";
-import { DotPattern } from "@/components/ui/dot-pattern";
+import LightRays from "@/components/lightrays/LightRays";
+import { DotPattern } from "@/components/ui/DotPattern";
 
 export default function Bonus() {
   return (

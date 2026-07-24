@@ -1,6 +1,6 @@
 import SalaryComparisonCard, {
   type SalaryLevel,
-} from "@/components/ui/SalaryComparisonCard";
+} from "@/components/ui/salary-comparison/SalaryComparisonCard";
 
 const DEVELOPER: SalaryLevel[] = [
   { level: "Júnior", brasil: 89_050, internacional: 69_069 },

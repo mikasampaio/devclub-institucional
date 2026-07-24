@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { Check } from "lucide-react";
-import { cn } from "@/lib/cn";
+import { cn } from "@/lib/utils";
 
 export interface GuaranteeSectionProps {
   /** Título grande da seção. Ex: "E se eu não curtir?". */

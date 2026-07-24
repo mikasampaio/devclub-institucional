@@ -2,14 +2,14 @@
 
 import { useMemo } from "react";
 import { useReducedMotion } from "framer-motion";
-import Legend from "./salary-comparison/Legend";
-import SalaryRow from "./salary-comparison/SalaryRow";
-import SrOnlyTable from "./salary-comparison/SrOnlyTable";
+import Legend from "./Legend";
+import SalaryRow from "./SalaryRow";
+import SrOnlyTable from "./SrOnlyTable";
 import {
   formatCurrency,
   maxSalary,
   type SalaryComparisonCardProps,
-} from "./salary-comparison/helpers";
+} from "./helpers";
 
 // Reexporta helpers e tipos para manter o caminho de import estável
 // (consumido por SalaryComparison.tsx e pelos testes).
@@ -17,11 +17,11 @@ export {
   formatCurrency,
   calcDifference,
   maxSalary,
-} from "./salary-comparison/helpers";
+} from "./helpers";
 export type {
   SalaryLevel,
   SalaryComparisonCardProps,
-} from "./salary-comparison/helpers";
+} from "./helpers";
 
 /* -------------------------------------------------------------------------- */
 /* Componente principal                                                        */

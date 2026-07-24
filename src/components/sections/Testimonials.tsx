@@ -8,8 +8,8 @@ import ViewToggle, {
 } from "@/components/testimonials/ViewToggle";
 import CarrosselView from "@/components/testimonials/CarrosselView";
 import MosaicoView from "@/components/testimonials/MosaicoView";
-import LightRays from "@/components/LightRays";
-import { DotPattern } from "../ui/dot-pattern";
+import LightRays from "@/components/lightrays/LightRays";
+import { DotPattern } from "../ui/DotPattern";
 
 export default function Testimonials() {
   const [view, setView] = useState<ViewMode>("carrossel");

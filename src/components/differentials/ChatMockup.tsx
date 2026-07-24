@@ -1,9 +1,9 @@
 "use client";
 
 import { motion, useReducedMotion, type Variants } from "framer-motion";
-import { cn } from "@/lib/cn";
 import { EASE, VIEWPORT } from "./constants";
 import MockupFrame from "./MockupFrame";
+import { cn } from "@/lib/utils";
 
 /* --- 2. Saúde mental: sessão de chat com bolhas em stagger ---------------- */
 

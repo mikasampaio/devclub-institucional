@@ -1,13 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { cn } from "@/lib/cn";
+import { cn } from "@/lib/utils";
 import SectionHeading, { TitleContrast } from "@/components/ui/SectionHeading";
-import CtaButton from "@/components/diferenciais/CtaButton";
-import { EASE, VIEWPORT } from "@/components/diferenciais/constants";
-import { cards, ILLUSTRATIONS } from "@/components/diferenciais/cards";
+import CtaButton from "@/components/differentials/CtaButton";
+import { EASE, VIEWPORT } from "@/components/differentials/constants";
+import { cards, ILLUSTRATIONS } from "@/components/differentials/cards";
 
-export default function Diferencials() {
+export default function Differentials() {
   return (
     <section className="relative py-24 sm:py-32">
       <div className="mx-auto flex w-full max-w-[80rem] flex-col gap-14 px-5">

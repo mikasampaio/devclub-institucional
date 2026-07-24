@@ -95,7 +95,7 @@ function Row({
   );
 }
 
-export default function Tecnologias() {
+export default function Technologies() {
   const rootRef = useRef<HTMLElement>(null);
   const tracksRef = useRef<(HTMLDivElement | null)[]>([]);
 
