@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Inter, DM_Sans, Caveat } from "next/font/google";
+import { Google_Sans, DM_Sans, Caveat } from "next/font/google";
 import "./globals.css";
-import CursorDot from "@/components/CursorDot";
+import CursorDot from "@/components/ui/CursorDot";
 
-const inter = Inter({
-  variable: "--font-inter",
+// Fonte padrão do site (corpo de texto). É variável (wght 400–700).
+const googleSans = Google_Sans({
+  variable: "--font-google-sans",
   subsets: ["latin"],
 });
 
@@ -33,9 +34,26 @@ export default function RootLayout({
   return (
     <html
       lang="pt-br"
-      className={`${inter.variable} ${dmSans.variable} ${caveat.variable} h-full antialiased`}
+      className={`${googleSans.variable} ${dmSans.variable} ${caveat.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col overflow-x-clip">
+      <head>
+        {/* Desabilita a restauração de scroll do navegador para que todo reload
+            comece no topo (hero) em vez da última posição. Roda de forma
+            síncrona no parse do <head>, antes da pintura, evitando o "pulo". */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "if('scrollRestoration' in history)history.scrollRestoration='manual';",
+          }}
+        />
+      </head>
+      {/* suppressHydrationWarning: extensões de navegador injetam atributos no
+          body (ex.: cz-shortcut-listen) antes da hidratação, gerando um mismatch
+          inofensivo. Suprime só neste nível. */}
+      <body
+        className="min-h-full flex flex-col overflow-x-clip"
+        suppressHydrationWarning
+      >
         <CursorDot />
         {children}
       </body>

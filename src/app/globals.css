@@ -36,7 +36,7 @@
   --color-faded: #fff9;
 
   /* Tipografia */
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-google-sans), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
   --font-signature: var(--font-caveat), "Segoe Script", cursive;
 
